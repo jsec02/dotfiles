@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            673            597           4399
+Lua                             61            673            597           4405
 Markdown                         3             24              8            261
-JSON                             2              0              0            243
+JSON                             2              0              0            244
 TOML                             5              9              0            207
 -------------------------------------------------------------------------------
-SUM:                            70            706            605           5110
+SUM:                            71            706            605           5117
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -107,6 +107,7 @@ dotfiles
 │   │           ├── oil.lua
 │   │           ├── snacks.lua
 │   │           ├── todo_comments.lua
+│   │           ├── vai.lua
 │   │           ├── whichkey.lua
 │   │           └── zellij_nav.lua
 │   ├── README.md
@@ -120,6 +121,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-23 directories, 71 files
+23 directories, 72 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
