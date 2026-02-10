@@ -22,12 +22,15 @@ return {
         local illuminate = require("illuminate")
         illuminate.configure(opts)
 
+        local enabled = false
+
         Snacks.toggle({
             name = "Underlines",
             get = function()
-                return not require("illuminate.engine").is_paused()
+                return enabled
             end,
-            set = function(enabled)
+            set = function(state)
+                enabled = state
                 if enabled then
                     illuminate.resume()
                 else
@@ -36,16 +39,21 @@ return {
             end,
         }):map("<leader>uu")
 
+        illuminate.pause()
+
         -- turn off in inactive windows
         vim.api.nvim_create_autocmd("WinLeave", {
             callback = function()
-                illuminate.pause()
+                if enabled then
+                    illuminate.pause()
+                end
             end,
         })
-
         vim.api.nvim_create_autocmd("WinEnter", {
             callback = function()
-                illuminate.resume()
+                if enabled then
+                    illuminate.resume()
+                end
             end,
         })
     end,
