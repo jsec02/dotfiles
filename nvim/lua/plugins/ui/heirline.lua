@@ -27,14 +27,6 @@ return {
             }
         end
 
-        local function with_surrounding_space(component)
-            return {
-                { condition = component.condition, provider = "  " },
-                component,
-                { condition = component.condition, provider = "  " },
-            }
-        end
-
         local FileEncoding = {
             condition = function()
                 local win_config = vim.api.nvim_win_get_config(0)
@@ -272,19 +264,6 @@ return {
             },
         }
 
-        local MacroRec = {
-            condition = function()
-                return vim.fn.reg_recording() ~= ""
-            end,
-            provider = function()
-                return "recording @" .. vim.fn.reg_recording()
-            end,
-            update = {
-                "RecordingEnter",
-                "RecordingLeave",
-            },
-        }
-
         local Diagnostics = {
             condition = function()
                 -- Check if diagnostics are disabled
@@ -416,8 +395,6 @@ return {
             with_trailing_space(GitDiffs),
             with_trailing_space(path.component),
             with_trailing_space(Diagnostics),
-            { provider = "%=" },
-            with_surrounding_space(MacroRec),
             { provider = "%=" },
             with_leading_space(ActiveTooling),
             with_leading_space(FileEncoding),
