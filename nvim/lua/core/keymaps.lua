@@ -14,10 +14,6 @@ map("n", "<leader>ch", vim.diagnostic.open_float, { desc = "Hover Diagnostics" }
 map("n", "<leader>K", "<Cmd>norm! K<CR>", { desc = "Keywordprg" })
 
 -- Black hole registers
-map({ "n", "v" }, "d", '"_d', { noremap = true })
-map({ "n", "v" }, "D", '"_D', { noremap = true })
-map({ "n", "v" }, "c", '"_c', { noremap = true })
-map({ "n", "v" }, "C", '"_C', { noremap = true })
 map({ "n", "v" }, "x", '"_x', { noremap = true })
 map({ "n", "v" }, "X", '"_X', { noremap = true })
 
