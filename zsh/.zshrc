@@ -80,6 +80,7 @@ alias fish_tank='cd ~/python/projects/fish_tank/'
 alias riven_sniper='cd ~/python/projects/riven_sniper/'
 alias wfm='cd ~/python/projects/wfm/'
 alias port_scanner='cd ~/python/projects/port_scanner/'
+alias pping='cd ~/python/projects/ping/'
 
 # Show project aliases
 projects() {
