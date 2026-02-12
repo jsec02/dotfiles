@@ -143,3 +143,39 @@ setopt INC_APPEND_HISTORY    # Write to history immediately
 
 # git clone https://github.com/hlissner/zsh-autopair ~/.zsh/zsh-autopair
 source ~/.zsh/zsh-autopair/autopair.zsh
+
+# ================================================================================
+# =                                ABBREVIATIONS                                 =
+# ================================================================================
+
+typeset -Ag abbreviations
+abbreviations=(
+  "feat"     'git commit -m "feat:'
+  "fix"      'git commit -m "fix:'
+  "docs"     'git commit -m "docs:'
+  "style"    'git commit -m "style:'
+  "refactor" 'git commit -m "refactor:'
+  "test"     'git commit -m "test:'
+  "chore"    'git commit -m "chore:'
+)
+
+magic-abbrev-expand() {
+  local word=${LBUFFER##* }
+  local expansion=${abbreviations[$word]}
+
+  if [[ -n $expansion ]]; then
+    LBUFFER=${LBUFFER%$word}$expansion
+    RBUFFER='"'$RBUFFER  # Add closing quote to right buffer
+  fi
+
+  zle self-insert
+}
+
+no-magic-abbrev-expand() {
+  LBUFFER+=' '
+}
+
+zle -N magic-abbrev-expand
+zle -N no-magic-abbrev-expand
+bindkey " " magic-abbrev-expand
+bindkey "^ " no-magic-abbrev-expand
