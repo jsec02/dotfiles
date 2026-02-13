@@ -133,9 +133,7 @@ export SAVEHIST=100000
 # Zsh history options
 setopt HIST_IGNORE_DUPS      # Don't record duplicate commands
 setopt HIST_IGNORE_SPACE     # Don't record commands starting with space
-setopt APPEND_HISTORY        # Append to history file
 setopt SHARE_HISTORY         # Share history across all sessions
-setopt INC_APPEND_HISTORY    # Write to history immediately
 
 # ================================================================================
 # =                                   PLUGINS                                    =
