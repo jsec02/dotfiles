@@ -19,7 +19,6 @@ Inspired by [LazyVim](https://github.com/LazyVim/LazyVim) and [AstroNvim](https:
 - LSP/tool management done with [mason.nvim](https://github.com/mason-org/mason.nvim) including a custom auto-installer using mason's registry directly
 - Custom status column enhancements based on [LazyVim](https://github.com/LazyVim/LazyVim)'s status column
 - Custom statusline built with [heirline.nvim](https://github.com/rebelot/heirline.nvim) with a pretty path
-- Custom Python indentation with treesitter-aware bracket detection
 - And much more
 
 ### Startup Time
@@ -42,10 +41,10 @@ Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             59            642            587           4197
 JSON                             2              0              0            244
-Markdown                         2             16              4            146
+Markdown                         2             18              4            145
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            64            658            591           4590
+SUM:                            64            660            591           4589
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
