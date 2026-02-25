@@ -32,16 +32,23 @@ PROMPT='%F{white}╭─%f${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }%B%F{green
 # ================================= COMPLETIONS ==================================
 
 
-autoload -Uz compinit promptinit
-compinit -C -d ~/.zcompdump
-promptinit
+autoload -Uz compinit
 
-# Complete in the middle of words
-setopt completeinword
+compinit -d ~/.cache/zcompdump
 
-# Highlighting
-zstyle ':completion:*' menu select
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete
+zstyle ':completion:*:descriptions' format 'Completing %d'
+zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors 'di=38;5;12:fi=38;5;12:ln=38;5;12:ex=38;5;12'
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
 # =================================== ALIASES ====================================
