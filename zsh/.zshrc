@@ -22,6 +22,8 @@ setopt autocd
 # Suggest corrections for mistyped commands
 setopt correct
 
+# hide EOL sign ('%')
+PROMPT_EOL_MARK=""
 
 # ==================================== PROMPT ====================================
 
