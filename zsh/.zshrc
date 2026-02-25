@@ -22,9 +22,9 @@ setopt autocd
 # Suggest corrections for mistyped commands
 setopt correct
 
-# ================================================================================
-# =                                    PROMPT                                    =
-# ================================================================================
+
+# ==================================== PROMPT ====================================
+
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
@@ -32,9 +32,9 @@ setopt prompt_subst
 PROMPT='%F{white}╭─%f${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }%B%F{green}%n@%m%f%b %B%F{12}%~%f%b
 %F{white}╰─$%f '
 
-# ================================================================================
-# =                                 COMPLETIONS                                  =
-# ================================================================================
+
+# ================================= COMPLETIONS ==================================
+
 
 autoload -Uz compinit promptinit
 compinit -C -d ~/.zcompdump
@@ -47,9 +47,9 @@ setopt completeinword
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors 'di=38;5;12:fi=38;5;12:ln=38;5;12:ex=38;5;12'
 
-# ================================================================================
-# =                                   ALIASES                                    =
-# ================================================================================
+
+# =================================== ALIASES ====================================
+
 
 # General
 alias ls='ls --color=auto'
@@ -86,9 +86,9 @@ projects() {
   alias | grep "cd ~" | sed "s/alias /  /" | sed "s/='cd /  -> /" | sed "s/'$//" | sort
 }
 
-# ================================================================================
-# =                            ENVIRONMENT VARIABLES                             =
-# ================================================================================
+
+# ============================ ENVIRONMENT VARIABLES =============================
+
 
 # Load secrets
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
@@ -111,15 +111,15 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 export DISPLAY=$(ip route show default | awk '{print $3}'):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
-# ================================================================================
-# =                                   KEYMAPS                                    =
-# ================================================================================
+
+# =================================== KEYMAPS ====================================
+
 
 bindkey '^R' history-incremental-search-backward
 
-# ================================================================================
-# =                                   HISTORY                                    =
-# ================================================================================
+
+# =================================== HISTORY ====================================
+
 
 # History file location
 export HISTFILE=~/.zsh_history
@@ -133,16 +133,16 @@ setopt HIST_IGNORE_DUPS      # Don't record duplicate commands
 setopt HIST_IGNORE_SPACE     # Don't record commands starting with space
 setopt SHARE_HISTORY         # Share history across all sessions
 
-# ================================================================================
-# =                                   PLUGINS                                    =
-# ================================================================================
+
+# =================================== PLUGINS ====================================
+
 
 # git clone https://github.com/hlissner/zsh-autopair ~/.zsh/zsh-autopair
 source ~/.zsh/zsh-autopair/autopair.zsh
 
-# ================================================================================
-# =                                ABBREVIATIONS                                 =
-# ================================================================================
+
+# ================================ ABBREVIATIONS =================================
+
 
 typeset -Ag abbreviations
 abbreviations=(
