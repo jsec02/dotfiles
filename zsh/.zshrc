@@ -53,8 +53,8 @@ alias grep='grep --color=auto'
 alias weather='curl wttr.in'
 
 # SSH
-alias pi="ssh master@10.0.0.181"
-alias kali="ssh master@10.0.0.190"
+alias pi='ssh master@10.0.0.181'
+alias kali='ssh master@10.0.0.190'
 
 # nvim
 alias lvim='NVIM_APPNAME=nvim.lazy nvim'
@@ -62,8 +62,7 @@ alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
 # VirtualBox
-alias startkali='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" startvm "Kali" --type headless'
-alias stopkali='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" controlvm "Kali" acpipowerbutton'
+alias vb='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
 # Projects
 alias alien_invasion='cd ~/python/projects/alien_invasion'
