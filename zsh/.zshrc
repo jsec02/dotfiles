@@ -55,7 +55,10 @@ zstyle ':completion:*' list-colors 'di=38;5;12:fi=38;5;12:ln=38;5;12:ex=38;5;12'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias weather='curl wttr.in'
+
+# SSH
 alias pi="ssh master@10.0.0.181"
+alias kali="ssh master@10.0.0.190"
 
 # nvim
 alias lvim='NVIM_APPNAME=nvim.lazy nvim'
