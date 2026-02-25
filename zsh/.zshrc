@@ -65,6 +65,10 @@ alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
+# VirtualBox
+alias startkali='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" startvm "Kali" --type headless'
+alias stopkali='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" controlvm "Kali" acpipowerbutton'
+
 # Projects
 alias alien_invasion='cd ~/python/projects/alien_invasion'
 alias data_visualization='cd ~/python/projects/data_visualization/'
