@@ -2,28 +2,21 @@
 # =                                    .ZSHRC                                    =
 # ================================================================================
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+setopt autocd # cd into dirs without typing cd
+setopt correct # Suggest corrections for mistyped commands
 
-# Initialize direnv
-eval "$(direnv hook zsh)"
+[[ $- != *i* ]] && return # If not running interactively, don't do anything
+
+eval "$(direnv hook zsh)" # Initialize direnv
+
+eval "$(zellij setup --generate-auto-start zsh)" # Automatically start zellij
 
 # Terminal title for zellij
 precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
 }
 
-# Automatically start zellij
-eval "$(zellij setup --generate-auto-start zsh)"
-
-# cd into dirs without typing cd
-setopt autocd
-
-# Suggest corrections for mistyped commands
-setopt correct
-
-# hide EOL sign ('%')
-PROMPT_EOL_MARK=""
+PROMPT_EOL_MARK="" # hide EOL sign ('%')
 
 # ==================================== PROMPT ====================================
 
