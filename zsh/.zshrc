@@ -51,6 +51,14 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
+# =============================== AUTO-SUGGESTIONS ===============================
+
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+
 # =================================== ALIASES ====================================
 
 
