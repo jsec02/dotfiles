@@ -7,8 +7,6 @@ setopt correct # Suggest corrections for mistyped commands
 
 [[ $- != *i* ]] && return # If not running interactively, don't do anything
 
-eval "$(direnv hook zsh)" # Initialize direnv
-
 PROMPT_EOL_MARK="" # hide EOL sign ('%')
 
 
@@ -51,6 +49,14 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+
+# ==================================== DIRENV ====================================
+
+
+if command -v direnv &>/dev/null; then
+    eval "$(direnv hook zsh)"
+fi
 
 
 # ==================================== ZELLIJ ====================================
