@@ -9,8 +9,6 @@ setopt correct # Suggest corrections for mistyped commands
 
 eval "$(direnv hook zsh)" # Initialize direnv
 
-eval "$(zellij setup --generate-auto-start zsh)" # Automatically start zellij
-
 PROMPT_EOL_MARK="" # hide EOL sign ('%')
 
 
