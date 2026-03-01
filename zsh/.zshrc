@@ -43,18 +43,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 
-# =============================== AUTO-SUGGESTIONS ===============================
-
-
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
-
-
 # ==================================== DIRENV ====================================
 
 
@@ -158,8 +146,18 @@ setopt SHARE_HISTORY         # Share history across all sessions
 # =================================== PLUGINS ====================================
 
 
+# zsh-autopair
 # git clone https://github.com/hlissner/zsh-autopair ~/.zsh/zsh-autopair
 source ~/.zsh/zsh-autopair/autopair.zsh
+
+# zsh-autosuggestions
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
 
 # ================================ ABBREVIATIONS =================================
