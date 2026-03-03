@@ -55,13 +55,15 @@ fi
 
 # ==================================== ZELLIJ ====================================
 
-
+# Start zellij automatically
 if command -v zellij &>/dev/null; then
-    eval "$(zellij setup --generate-auto-start zsh)" # Start zellij automatically
-    precmd() {
-        print -Pn "\e]0;%n@%m:%~\a" # Terminal title for zellij
-    }
+    eval "$(zellij setup --generate-auto-start zsh)"
 fi
+
+# Terminal title for zellij
+precmd() {
+    print -Pn "\e]0;%n@%m:%~\a"
+}
 
 
 # =================================== ALIASES ====================================
