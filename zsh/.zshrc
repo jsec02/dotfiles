@@ -57,9 +57,9 @@ fi
 
 
 if command -v zellij &>/dev/null; then
-    eval "$(zellij setup --generate-auto-start zsh)"
+    eval "$(zellij setup --generate-auto-start zsh)" # Start zellij automatically
     precmd() {
-        print -Pn "\e]0;%n@%m:%~\a"
+        print -Pn "\e]0;%n@%m:%~\a" # Terminal title for zellij
     }
 fi
 
