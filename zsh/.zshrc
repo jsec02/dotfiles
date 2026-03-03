@@ -75,6 +75,10 @@ alias grep='grep --color=auto'
 alias history="history 0"
 alias weather='curl wttr.in'
 
+# History
+alias histoff='unset HISTFILE'
+alias histon='HISTFILE=~/.zsh_history'
+
 # nvim
 alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
