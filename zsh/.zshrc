@@ -7,7 +7,9 @@ setopt correct # Suggest corrections for mistyped commands
 
 [[ $- != *i* ]] && return # If not running interactively, don't do anything
 
-PROMPT_EOL_MARK="" # hide EOL sign ('%')
+PROMPT_EOL_MARK="" # Hide EOL sign ('%')
+
+stty -ixon # Enable Ctrl+S for forward history search
 
 
 # ==================================== PROMPT ====================================
