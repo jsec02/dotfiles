@@ -191,39 +191,33 @@ keybinds clear-defaults=true {
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
-    shared_except "locked"{
-        bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "q" { Quit; }
+    shared_except "locked" "renametab" "renamepane" {
+      bind "Ctrl g" { SwitchToMode "locked"; }
+      bind "q" { Quit; }
     }
-    shared_except "locked" "move" {
-        bind "m" { SwitchToMode "move"; }
-    }
-    shared_except "locked" "session" {
-        bind "o" { SwitchToMode "session"; }
-    }
-    shared_except "locked" "scroll" "search" "tmux" {
-        bind "b" { SwitchToMode "tmux"; }
-    }
-    shared_except "locked" "scroll" "search" {
-        bind "s" { SwitchToMode "scroll"; }
-    }
-    shared_except "locked" "tab" {
-        bind "t" { SwitchToMode "tab"; }
-    }
-    shared_except "locked" "pane" {
-        bind "p" { SwitchToMode "pane"; }
-    }
-    shared_except "locked" "resize" {
-        bind "r" { SwitchToMode "resize"; }
-    }
-    shared_except "normal" "locked" "entersearch" {
-        bind "enter" { SwitchToMode "normal"; }
+    shared_except "locked" "entersearch" {
+      bind "enter" { SwitchToMode "locked"; }
     }
     shared_except "locked" "entersearch" "renametab" "renamepane" {
-        bind "esc" { SwitchToMode "locked"; }
+      bind "esc" { SwitchToMode "locked"; }
     }
-    shared_among "pane" "tmux" {
-        bind "x" { CloseFocus; SwitchToMode "normal"; }
+    shared_except "locked" "entersearch" "renametab" "renamepane" "move" {
+      bind "m" { SwitchToMode "move"; }
+    }
+    shared_except "locked" "entersearch" "search" "renametab" "renamepane" "session" {
+      bind "o" { SwitchToMode "session"; }
+    }
+    shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
+      bind "t" { SwitchToMode "tab"; }
+    }
+    shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
+      bind "p" { SwitchToMode "pane"; }
+    }
+    shared_among "normal" "resize" "search" "move" "prompt" "tmux" {
+      bind "s" { SwitchToMode "scroll"; }
+    }
+    shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
+      bind "r" { SwitchToMode "resize"; }
     }
     shared_among "scroll" "search" {
         bind "PageDown" { PageScrollDown; }
