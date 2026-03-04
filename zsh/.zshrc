@@ -72,10 +72,10 @@ precmd() {
 # General
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias history="history 0"
 alias weather='curl wttr.in'
 
 # History
+alias history="history 0"
 alias histoff='unset HISTFILE'
 alias histon='HISTFILE=~/.zsh_history'
 
@@ -83,6 +83,9 @@ alias histon='HISTFILE=~/.zsh_history'
 alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
+
+# git
+alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git push'
 
 # VirtualBox
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
