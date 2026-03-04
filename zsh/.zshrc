@@ -126,10 +126,6 @@ export PATH="$PATH:/usr/sbin"
 export PYTHONPATH="$HOME/python/modules:$PYTHONPATH"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
-# VcXsrv
-export DISPLAY=$(ip route show default | awk '{print $3}'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
-
 
 # =================================== KEYMAPS ====================================
 
