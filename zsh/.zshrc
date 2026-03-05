@@ -92,14 +92,14 @@ alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
 # Projects
 alias alien_invasion='cd ~/python/projects/alien_invasion'
-alias data_visualization='cd ~/python/projects/data_visualization/'
-alias dotfiles='cd ~/dotfiles/'
-alias neovim='cd ~/.config/nvim/'
-alias fish_tank='cd ~/python/projects/fish_tank/'
-alias riven_sniper='cd ~/python/projects/riven_sniper/'
-alias wfm='cd ~/python/projects/wfm/'
-alias port_scanner='cd ~/python/projects/port_scanner/'
-alias pping='cd ~/python/projects/ping/'
+alias data_visualization='cd ~/python/projects/data_visualization'
+alias dotfiles='cd ~/dotfiles'
+alias neovim='cd ~/.config/nvim'
+alias fish_tank='cd ~/python/projects/fish_tank'
+alias riven_sniper='cd ~/python/projects/riven_sniper'
+alias wfm='cd ~/python/projects/wfm'
+alias port_scanner='cd ~/python/projects/port_scanner'
+alias pping='cd ~/python/projects/ping'
 
 # Show project aliases
 projects() {
@@ -120,9 +120,9 @@ export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe" # Use windows 
 
 # Path
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/python/scripts/:$PATH"
-export PATH="$HOME/bash/scripts/:$PATH"
-export PATH="$HOME/bash/backup/scripts/:$PATH"
+export PATH="$HOME/python/scripts:$PATH"
+export PATH="$HOME/bash/scripts:$PATH"
+export PATH="$HOME/bash/backup/scripts:$PATH"
 export PATH="$PATH:/usr/sbin"
 
 # Python
