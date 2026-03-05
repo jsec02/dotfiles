@@ -14,13 +14,12 @@ return {
         spec = {
             -- Groups
             { "<leader>b", group = " Buffer" },
-            { "<leader>c", group = " Code" },
+            { "<leader>c", group = " Code", mode = { "n", "v" } },
             { "<leader>d", group = " Debug" },
             { "<leader>D", group = " Divider" },
             { "<leader>C", group = " Comment" },
-            { "<leader>f", group = " File/Find" },
-            { "<leader>g", group = "󰊢 Git" },
-            { "<leader>gh", group = "󰊢 Hunks" },
+            { "<leader>f", group = " File/Find", mode = { "n", "v" } },
+            { "<leader>g", group = "󰊢 Git", mode = { "n", "v" } },
             { "<leader>r", group = " Run" },
             { "<leader>s", group = " Search" },
             { "<leader>t", group = " Test" },
