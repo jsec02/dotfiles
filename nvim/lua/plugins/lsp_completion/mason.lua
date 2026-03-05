@@ -44,10 +44,11 @@ return {
             "shellcheck", -- bash linter
             "shfmt", -- bash formatter
             "htmlhint", -- html linter
-            "prettier", -- js, ts, css, html, md, yaml etc formatter
+            "prettier", -- js, ts, css, html, yaml etc formatter
             "djlint", -- html linter/formatter designed for django
             "sqruff", -- sql linter/formatter
             "biome", -- js, ts, jsx, json, css linter/formatter
+            "dprint", -- md formatter
         }
 
         local registry = require("mason-registry")
