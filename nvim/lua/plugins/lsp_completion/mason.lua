@@ -30,6 +30,7 @@ return {
                 "html", -- html ls
                 "cssls", -- css ls
                 "vtsls", -- ts/js ls
+                "markdown_oxide", --md ls
             },
             automatic_enable = true,
         })
