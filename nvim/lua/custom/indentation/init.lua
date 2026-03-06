@@ -1,7 +1,5 @@
 -- ================================================================================
--- =                                  ROOT INIT                                   =
+-- =                               INDENTATION INIT                               =
 -- ================================================================================
 
-require("core")
-require("custom.modules")
-require("custom.indentation")
+require("custom.indentation.python")

@@ -5,6 +5,10 @@
 local runner = require("custom.modules.code_runner")
 local debugger = require("custom.modules.code_debugger")
 
+vim.opt_local.indentkeys:remove("[")
+vim.opt_local.indentkeys:remove("]")
+vim.bo.indentexpr = "indent(v:lnum)"
+
 -- Indentation
 vim.opt_local.tabstop = 4
 vim.opt_local.softtabstop = 4
