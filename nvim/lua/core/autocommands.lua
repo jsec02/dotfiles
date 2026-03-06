@@ -71,6 +71,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+-- Re-run ftplugin after oil.nvim renames a markdown buffer
+vim.api.nvim_create_autocmd("BufEnter", {
+    group = "editor_behavior",
+    pattern = "*.md",
+    callback = function()
+        vim.cmd("filetype detect")
+    end,
+})
+
 -- Auto-close buffers when their file is deleted
 vim.api.nvim_create_autocmd("FileChangedShell", {
     group = "editor_behavior",
