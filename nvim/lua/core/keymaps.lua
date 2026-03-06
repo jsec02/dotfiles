@@ -12,6 +12,7 @@ vim.g.maplocalleader = " "
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>ch", vim.diagnostic.open_float, { desc = "Hover Diagnostics" })
 map("n", "<leader>K", "<Cmd>norm! K<CR>", { desc = "Keywordprg" })
+map("n", "<BS>", "<Nop>")
 
 -- Black hole registers
 map({ "n", "v" }, "x", '"_x', { noremap = true })
