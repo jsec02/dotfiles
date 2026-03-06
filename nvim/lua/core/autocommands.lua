@@ -71,6 +71,22 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end,
 })
 
+-- Auto-close buffers when their file is deleted
+vim.api.nvim_create_autocmd("FileChangedShell", {
+    group = "editor_behavior",
+    callback = function(event)
+        if vim.fn.filereadable(vim.api.nvim_buf_get_name(event.buf)) == 0 then
+            vim.v.fcs_choice = ""
+            local buf = event.buf
+            vim.schedule(function()
+                pcall(vim.api.nvim_buf_delete, buf, { force = true })
+            end)
+        else
+            vim.v.fcs_choice = "reload"
+        end
+    end,
+})
+
 -- ============================ UI/VISUAL ENHANCEMENTS ============================
 
 augroup("ui_enhancements", { clear = true })
