@@ -38,7 +38,8 @@ opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
 
 -- =================================== BEHAVIOR ===================================
 
-opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus" -- Use system clipboard
+opt.whichwrap = "<,>,[,]" -- Allow arrows to wrap across lines
 opt.swapfile = false -- Disable swap files
 opt.undofile = true -- Enable persistent undo
 opt.updatetime = 200 -- Faster update time for diagnostics, etc.
