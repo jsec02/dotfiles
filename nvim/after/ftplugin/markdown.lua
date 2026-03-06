@@ -13,6 +13,9 @@ vim.opt_local.linebreak = true
 vim.opt_local.breakindent = true
 vim.opt_local.spell = true
 
+vim.keymap.set("n", "<Down>", "g<Down>", { buffer = true })
+vim.keymap.set("n", "<Up>", "g<Up>", { buffer = true })
+
 -- Cleanup on filetype change
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")
     .. "| setlocal tabstop< shiftwidth< expandtab< wrap< linebreak< breakindent< spell<"
