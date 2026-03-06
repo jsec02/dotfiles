@@ -101,6 +101,9 @@ return {
                 -- Removed html
                 filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "json", "jsonc", "css" },
             },
+            dprint = {
+                filetypes = { "markdown" },
+            },
         }
 
         for server_name, config in pairs(servers) do
