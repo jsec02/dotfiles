@@ -39,12 +39,12 @@ UIEnter   28.4ms (+5.4ms)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             59            645            599           4202
+Lua                             58            639            590           4177
 JSON                             2              0              0            244
 Markdown                         2             16              4            145
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            64            661            603           4594
+SUM:                            63            655            594           4569
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -97,14 +97,13 @@ nvim
 │   │       └── window_swapper.lua
 │   └── plugins
 │       ├── coding
-│       │   ├── autopair.lua
+│       │   ├── autopairs.lua
 │       │   ├── autotag.lua
 │       │   ├── gitsigns.lua
 │       │   ├── mini_ai.lua
 │       │   ├── surround.lua
 │       │   ├── treesitter.lua
-│       │   ├── treesj.lua
-│       │   └── ultimate-autopair.lua
+│       │   └── treesj.lua
 │       ├── lsp_completion
 │       │   ├── blink_cmp.lua
 │       │   ├── conform.lua
@@ -132,7 +131,7 @@ nvim
 └── snippets
     └── python.json
 
-14 directories, 63 files
+14 directories, 62 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
 
