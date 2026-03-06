@@ -6,6 +6,7 @@ local tabs_picker = require("custom.extensions.tabs_picker")
 
 return {
     "folke/snacks.nvim",
+    -- enabled = false,
     priority = 1000,
     lazy = false,
     opts = {
