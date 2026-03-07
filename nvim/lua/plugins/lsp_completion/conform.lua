@@ -33,7 +33,7 @@ return {
                 lua = { "stylua" },
                 python = { "ruff_format", "ruff_organize_imports" },
                 markdown = { "injected", "dprint" },
-                sh = { "shfmt" },
+                bash = { "shfmt" },
                 html = { "prettier" },
                 htmldjango = { "djlint" },
                 sql = { "sqruff" },

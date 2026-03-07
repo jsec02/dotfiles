@@ -10,6 +10,7 @@ return {
         local lint = require("lint")
         lint.linters_by_ft = {
             lua = { "luacheck" },
+            bash = { "shellcheck" },
             html = { "htmlhint" },
             htmldjango = { "djlint" },
         }
