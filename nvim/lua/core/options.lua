@@ -32,6 +32,7 @@ opt.breakindentopt = "list:-1" -- Add padding for lists (if 'wrap' is set)
 opt.linebreak = true -- Wrap lines at 'breakat' (if 'wrap' is set)
 opt.scrolloff = 10 -- Vertical scroll offset
 opt.sidescrolloff = 10 -- Horizontal scroll offset
+opt.smoothscroll = true -- Smooth scrolling with soft wrapping
 opt.winborder = "rounded" -- Rounded borders for floating windows
 opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
 -- opt.shortmess:append("I") -- Dont show intro message
