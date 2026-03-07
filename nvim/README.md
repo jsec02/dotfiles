@@ -39,12 +39,12 @@ UIEnter   28.4ms (+5.4ms)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             58            641            591           4189
+Lua                             59            642            594           4195
 JSON                             2              0              0            243
 Markdown                         2             16              4            144
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            63            657            595           4579
+SUM:                            64            658            598           4585
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -57,6 +57,7 @@ SUM:                            63            657            595           4579
 nvim
 ├── after
 │   └── ftplugin
+│       ├── bash.lua
 │       ├── css.lua
 │       ├── htmldjango.lua
 │       ├── html.lua
@@ -67,7 +68,6 @@ nvim
 │       ├── markdown.lua
 │       ├── ps1.lua
 │       ├── python.lua
-│       ├── sh.lua
 │       └── sql.lua
 ├── COMMANDS.md
 ├── init.lua
@@ -76,6 +76,7 @@ nvim
 │   ├── core
 │   │   ├── autocommands.lua
 │   │   ├── diagnostics.lua
+│   │   ├── filetypes.lua
 │   │   ├── init.lua
 │   │   ├── keymaps.lua
 │   │   ├── lazy.lua
@@ -131,7 +132,7 @@ nvim
 └── snippets
     └── python.json
 
-14 directories, 62 files
+14 directories, 63 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
 

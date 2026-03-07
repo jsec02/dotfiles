@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             58            641            591           4189
+Lua                             59            642            594           4195
 Markdown                         3             24              8            256
 JSON                             2              0              0            243
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            68            675            599           4897
+SUM:                            69            676            602           4903
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -36,6 +36,7 @@ dotfiles
 ├── nvim
 │   ├── after
 │   │   └── ftplugin
+│   │       ├── bash.lua
 │   │       ├── css.lua
 │   │       ├── htmldjango.lua
 │   │       ├── html.lua
@@ -46,7 +47,6 @@ dotfiles
 │   │       ├── markdown.lua
 │   │       ├── ps1.lua
 │   │       ├── python.lua
-│   │       ├── sh.lua
 │   │       └── sql.lua
 │   ├── COMMANDS.md
 │   ├── init.lua
@@ -55,6 +55,7 @@ dotfiles
 │   │   ├── core
 │   │   │   ├── autocommands.lua
 │   │   │   ├── diagnostics.lua
+│   │   │   ├── filetypes.lua
 │   │   │   ├── init.lua
 │   │   │   ├── keymaps.lua
 │   │   │   ├── lazy.lua
@@ -119,6 +120,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-23 directories, 70 files
+23 directories, 71 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
