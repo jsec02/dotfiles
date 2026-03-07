@@ -45,7 +45,7 @@ return {
                 "python",
                 "json",
                 "lua",
-                "sh",
+                "bash",
                 "c",
                 "html",
                 "htmldjango",
