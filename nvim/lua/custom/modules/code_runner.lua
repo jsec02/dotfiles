@@ -22,7 +22,7 @@ function M.run_in_zellij(interpreter, filename, args)
     vim.notify("Running " .. display_name .. " in Zellij")
     local actual_interpreter = get_interpreter_path(interpreter)
     local args_str = args and (" " .. args) or ""
-    local zellij_cmd = string.format('zellij run -- %s "%s"%s', actual_interpreter, filename, args_str)
+    local zellij_cmd = string.format("zellij run -- zsh -i -c '%s \"%s\"%s'", actual_interpreter, filename, args_str)
     vim.fn.system(zellij_cmd)
 end
 
@@ -37,7 +37,7 @@ function M.run_in_zellij_floating(interpreter, filename, args)
     local actual_interpreter = get_interpreter_path(interpreter)
     local args_str = args and (" " .. args) or ""
     local zellij_cmd = string.format(
-        'zellij run --floating --width "80%%" --height "80%%" --x "10%%" --y "15%%" -- %s "%s"%s',
+        'zellij run --floating --width "80%%" --height "80%%" --x "10%%" --y "13%%" -- zsh -i -c \'%s "%s"%s\'',
         actual_interpreter,
         filename,
         args_str
@@ -50,12 +50,10 @@ function M.run_detached(interpreter, filename, args)
     local display_name = vim.fn.fnamemodify(filename, ":t")
     vim.notify("Running " .. display_name .. " detached")
     local actual_interpreter = get_interpreter_path(interpreter)
-
     local cmd = { actual_interpreter, filename }
     if args then
         vim.list_extend(cmd, vim.split(args, " "))
     end
-
     vim.fn.jobstart(cmd, {
         detach = true,
         on_exit = function()
