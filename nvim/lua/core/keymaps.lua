@@ -12,7 +12,6 @@ vim.g.maplocalleader = " "
 map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>ch", vim.diagnostic.open_float, { desc = "Hover Diagnostics" })
 map("n", "<leader>K", "<Cmd>norm! K<CR>", { desc = "Keywordprg" })
-map("n", "<BS>", "<Nop>")
 
 -- Black hole registers
 map({ "n", "v" }, "x", '"_x', { noremap = true })
@@ -124,3 +123,12 @@ map("n", "[l", vim.cmd.lprev, { desc = "Previous Location" })
 
 -- Clear search, diff update and redraw (refresh ui)
 map("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", { desc = "Refresh UI" })
+
+-- Disable backspace
+map("n", "<BS>", "<Nop>")
+
+-- Make esc clear snippet highlighting
+vim.keymap.set("s", "<Esc>", function()
+    vim.snippet.stop()
+    return "<Esc>"
+end, { expr = true })
