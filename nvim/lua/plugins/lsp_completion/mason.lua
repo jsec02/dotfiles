@@ -25,7 +25,7 @@ return {
                 "basedpyright", -- python ls
                 -- "ty", -- python lsp
                 -- "pyrefly", -- python ls
-                "bashls", -- bash lsp
+                "bashls", -- bash ls
                 "powershell_es", -- powershell ls (includes formatter and linter)
                 "html", -- html ls
                 "cssls", -- css ls

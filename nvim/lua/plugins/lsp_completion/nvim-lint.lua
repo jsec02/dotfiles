@@ -8,9 +8,9 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         local lint = require("lint")
+        -- shellcheck is handled by bashls
         lint.linters_by_ft = {
             lua = { "luacheck" },
-            bash = { "shellcheck" },
             html = { "htmlhint" },
             htmldjango = { "djlint" },
         }
