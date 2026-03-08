@@ -55,6 +55,12 @@ return {
                         "-",
                     },
                 },
+                shfmt = {
+                    args = {
+                        "-ci",
+                        "-",
+                    },
+                },
                 djlint = {
                     args = { "--reformat", "--indent", "2", "--ignore-case", "-" },
                 },
