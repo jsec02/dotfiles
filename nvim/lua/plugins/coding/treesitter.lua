@@ -9,17 +9,13 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-        -- Setup with proper install directory
         local install_dir = vim.fn.stdpath("data") .. "/site"
         require("nvim-treesitter").setup({
             install_dir = install_dir,
         })
-
-        -- Ensure install directory is in runtimepath
         vim.opt.runtimepath:prepend(install_dir)
 
-        -- Install parsers
-        require("nvim-treesitter").install({
+        local parsers = {
             "bash",
             "c",
             "diff",
@@ -37,28 +33,21 @@ return {
             "kdl",
             "css",
             "javascript",
-        })
+        }
 
-        -- Enable highlighting
+        local indent_disabled = {
+            bash = true,
+        }
+
+        require("nvim-treesitter").install(parsers)
+
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = {
-                "python",
-                "json",
-                "lua",
-                "bash",
-                "c",
-                "html",
-                "htmldjango",
-                "markdown",
-                "vim",
-                "ruby",
-                "kdl",
-                "css",
-                "javascript",
-            },
+            pattern = parsers,
             callback = function()
                 vim.treesitter.start()
-                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                if not indent_disabled[vim.bo.filetype] then
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end
             end,
         })
     end,
