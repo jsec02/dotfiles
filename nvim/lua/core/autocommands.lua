@@ -139,24 +139,3 @@ autocmd("VimResized", {
         vim.cmd("wincmd =")
     end,
 })
-
--- Always open help in vertical split
-autocmd("BufWinEnter", {
-    group = "ui_enhancements",
-    callback = function()
-        if vim.bo.filetype == "help" then
-            local win_config = vim.api.nvim_win_get_config(0)
-            if win_config.relative ~= "" then
-                return
-            end
-
-            local buf_name = vim.api.nvim_buf_get_name(0)
-            if buf_name:match("snacks://") or buf_name:match("picker://") then
-                return
-            end
-
-            vim.cmd("wincmd L")
-            vim.opt_local.scrolloff = 10
-        end
-    end,
-})
