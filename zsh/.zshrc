@@ -55,6 +55,7 @@ fi
 
 # ==================================== ZELLIJ ====================================
 
+
 # Start zellij automatically
 if command -v zellij &>/dev/null; then
     eval "$(zellij setup --generate-auto-start zsh)"
@@ -126,7 +127,6 @@ export PATH="$HOME/bash/backup/scripts:$PATH"
 export PATH="$PATH:/usr/sbin"
 
 # Python
-export PYTHONPATH="$HOME/python/modules:$PYTHONPATH"
 export PYTHONBREAKPOINT=ipdb.set_trace
 
 
