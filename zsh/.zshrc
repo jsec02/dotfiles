@@ -169,8 +169,8 @@ function zle-keymap-select {
 }
 
 zle-line-init() {
-    zle -K vicmd
-    echo -ne '\e[1 q' # block cursor
+    zle -K viins  # insert mode
+    echo -ne '\e[5 q' # beam cursor
 }
 
 zle -N zle-keymap-select
