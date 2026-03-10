@@ -147,17 +147,22 @@ KEYTIMEOUT=1 # Reduce escape key delay for mode switching
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^H' backward-delete-char
 
+# History keymaps
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -M vicmd '?' history-incremental-search-forward
+
 # Cursor shape based on mode
 function zle-keymap-select {
   if [[ $KEYMAP == vicmd ]]; then
-    echo -ne '\e[1 q'  # block cursor (normal mode)
+    echo -ne '\e[1 q' # block cursor (normal mode)
   else
-    echo -ne '\e[5 q'  # beam cursor (insert mode)
+    echo -ne '\e[5 q' # beam cursor (insert mode)
   fi
 }
 
-function zle-line-init {
-  echo -ne '\e[5 q'  # beam cursor on new line
+zle-line-init() {
+    zle -K vicmd
+    echo -ne '\e[1 q' # block cursor
 }
 
 zle -N zle-keymap-select
