@@ -136,6 +136,34 @@ export PYTHONBREAKPOINT=ipdb.set_trace
 bindkey '^R' history-incremental-search-backward
 
 
+# =================================== VI MODE ====================================
+
+
+bindkey -v
+
+KEYTIMEOUT=1 # Reduce escape key delay for mode switching
+
+# Fix backspace not working after switching modes
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^H' backward-delete-char
+
+# Cursor shape based on mode
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[1 q'  # block cursor (normal mode)
+  else
+    echo -ne '\e[5 q'  # beam cursor (insert mode)
+  fi
+}
+
+function zle-line-init {
+  echo -ne '\e[5 q'  # beam cursor on new line
+}
+
+zle -N zle-keymap-select
+zle -N zle-line-init
+
+
 # =================================== HISTORY ====================================
 
 
