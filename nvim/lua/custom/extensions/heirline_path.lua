@@ -185,7 +185,7 @@ function M.get_path()
         local checkhealth_icon, checkhealth_hl = get_icon(nil, "checkhealth")
         path_data.icon_str, path_data.icon_hl = format_icon_with_padding(checkhealth_icon, checkhealth_hl)
     elseif bufname:match("^man://") then
-        local name, section = bufname:match("^man://(.+)%((%d+)%)")
+        local name, section = bufname:match("^man://(.+)%(([%w]+)%)")
         local cache_key = name .. section
         if not man_path_cache[cache_key] then
             local ok, path = pcall(require("man")._find_path, name, section)
