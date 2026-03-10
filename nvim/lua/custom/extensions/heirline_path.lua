@@ -12,6 +12,7 @@ local max_depth = 3
 local path_sep = package.config:sub(1, 1)
 local icon_padding = { [""] = 1 }
 local lock_icon = " "
+local man_path_cache = {}
 
 --- Get icon using mini.icons
 local function get_icon(filename, filetype)
@@ -85,8 +86,8 @@ local function handle_qf_loclist()
 end
 
 --- Handles display for regular files.
-local function handle_regular_file()
-    local bufname = vim.api.nvim_buf_get_name(0)
+local function handle_regular_file(override_path)
+    local bufname = override_path or vim.api.nvim_buf_get_name(0)
     if bufname == "" then
         return ""
     end
@@ -163,10 +164,10 @@ function M.get_path()
     local bufname = vim.fn.expand("%")
 
     local path_data = {
-        type = "regular", -- Default type
+        type = "regular", -- default type
     }
 
-    -- Always get icon and base padding initially (can be overridden later for specific types)
+    -- always get icon and base padding initially (can be overridden later for specific types)
     local icon, hl = get_buffer_icon()
     path_data.icon_str, path_data.icon_hl = format_icon_with_padding(icon, hl)
     path_data.padding_left = ""
@@ -180,19 +181,19 @@ function M.get_path()
     elseif filetype == "checkhealth" or bufname:match("^health://") or bufname:match("checkhealth") then
         path_data.type = "checkhealth"
         path_data.checkhealth_text = handle_checkhealth()
-        -- Directly override icon for checkhealth
+        -- directly override icon for checkhealth
         local checkhealth_icon, checkhealth_hl = get_icon(nil, "checkhealth")
         path_data.icon_str, path_data.icon_hl = format_icon_with_padding(checkhealth_icon, checkhealth_hl)
-    -- elseif bufname:match("^man://") then
-    --     local name, section = bufname:match("^man://(.+)%((%d+)%)")
-    --     local ok, path = pcall(require("man")._find_path, name, section)
-    --     path_data.type = "regular"
-    --     if ok and path then
-    --         path_data.dir_path, path_data.filename = separate_path_filename(path)
-    --     else
-    --         path_data.dir_path = ""
-    --         path_data.filename = bufname
-    --     end
+    elseif bufname:match("^man://") then
+        local name, section = bufname:match("^man://(.+)%((%d+)%)")
+        local cache_key = name .. section
+        if not man_path_cache[cache_key] then
+            local ok, path = pcall(require("man")._find_path, name, section)
+            man_path_cache[cache_key] = (ok and path) or bufname
+        end
+        path_data.type = "regular"
+        local result_str = handle_regular_file(man_path_cache[cache_key])
+        path_data.dir_path, path_data.filename = separate_path_filename(result_str)
     else
         path_data.type = "regular"
         local result_str = handle_regular_file()
