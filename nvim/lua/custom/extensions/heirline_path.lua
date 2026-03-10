@@ -183,6 +183,16 @@ function M.get_path()
         -- Directly override icon for checkhealth
         local checkhealth_icon, checkhealth_hl = get_icon(nil, "checkhealth")
         path_data.icon_str, path_data.icon_hl = format_icon_with_padding(checkhealth_icon, checkhealth_hl)
+    -- elseif bufname:match("^man://") then
+    --     local name, section = bufname:match("^man://(.+)%((%d+)%)")
+    --     local ok, path = pcall(require("man")._find_path, name, section)
+    --     path_data.type = "regular"
+    --     if ok and path then
+    --         path_data.dir_path, path_data.filename = separate_path_filename(path)
+    --     else
+    --         path_data.dir_path = ""
+    --         path_data.filename = bufname
+    --     end
     else
         path_data.type = "regular"
         local result_str = handle_regular_file()
