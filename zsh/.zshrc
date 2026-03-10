@@ -71,9 +71,16 @@ precmd() {
 
 
 # General
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias weather='curl wttr.in'
+
+# ls
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    export LS_COLORS="$LS_COLORS:ow=30;44:"
+    alias ls='ls --color=auto'
+fi
+
 
 # History
 alias history="history 0"
