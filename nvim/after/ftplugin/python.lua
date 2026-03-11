@@ -5,16 +5,20 @@
 local runner = require("custom.modules.code_runner")
 local debugger = require("custom.modules.code_debugger")
 
-vim.opt_local.indentkeys:remove("[")
-vim.opt_local.indentkeys:remove("]")
-vim.bo.indentexpr = "indent(v:lnum)"
-
 -- Indentation
 vim.opt_local.tabstop = 4
 vim.opt_local.softtabstop = 4
 vim.opt_local.shiftwidth = 4
 vim.opt_local.expandtab = true
 vim.opt_local.autoindent = true
+
+-- Status column
+vim.opt_local.statuscolumn = "%!v:lua.require'custom.modules.status_column'.get()"
+
+-- Line numbers
+vim.opt_local.number = true -- Show absolute line numbers
+vim.opt_local.relativenumber = true -- Show relative line numbers
+vim.opt_local.numberwidth = 4 -- Set line number column width
 
 -- Run keymaps (without args)
 vim.keymap.set("n", "<leader>rr", function()

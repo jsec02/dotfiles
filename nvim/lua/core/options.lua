@@ -10,20 +10,20 @@ local cmd = vim.cmd
 
 g.loaded_matchparen = 1 -- Disable matchparen (using rainbow-delimiters)
 g.have_nerd_font = true -- Enable nerd font
-opt.number = true -- Show absolute line numbers
-opt.relativenumber = true -- Show relative line numbers
+-- opt.number = true -- Show absolute line numbers
+-- opt.relativenumber = true -- Show relative line numbers
 opt.mouse = "" -- Disable mouse in all modes
 opt.guicursor:append("c:ver25,a:blinkon0") -- Custom cursor styles
 cmd("aunmenu PopUp") -- Disable right click menu
 opt.title = true -- Enable window title
 opt.laststatus = 3 -- Always show statusline
-opt.statuscolumn = "%!v:lua.require'custom.modules.status_column'.get()" -- Custom status column
-opt.numberwidth = 4 -- Set line number column width
+-- opt.statuscolumn = "%!v:lua.require'custom.modules.status_column'.get()" -- Custom status column
+opt.signcolumn = "yes" -- Always show sign column
+-- opt.numberwidth = 4 -- Set line number column width
 opt.statusline = " " -- Show a blank statusline before heirline loads in
 opt.showtabline = 0 -- Disable tabline
 -- opt.cmdheight = 0 -- Hide command line when not in use
 opt.showmode = false -- Dont show mode messages
-opt.signcolumn = "yes" -- Always show sign column (gutter)
 opt.termguicolors = true -- Enable true color support
 opt.cursorline = true -- Highlight the current line
 opt.wrap = false -- Disable line wrapping

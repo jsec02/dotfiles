@@ -2,9 +2,8 @@
 -- =                                     MAN                                      =
 -- ================================================================================
 
--- Turn off signcolumn
-vim.opt_local.signcolumn = "no"
-vim.opt_local.foldcolumn = "1"
+-- Force on signcolumn (built in man.vim turns it off)
+vim.opt_local.signcolumn = "yes"
 
 -- Cleanup on filetype change
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")

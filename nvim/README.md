@@ -39,12 +39,12 @@ UIEnter   28.4ms (+5.4ms)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             61            645            606           4203
+Lua                             60            663            624           4232
 JSON                             2              0              0            243
-Markdown                         2             16              4            147
+Markdown                         2             18              4            147
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            66            661            610           4596
+SUM:                            65            681            628           4625
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -59,7 +59,6 @@ nvim
 │   └── ftplugin
 │       ├── bash.lua
 │       ├── css.lua
-│       ├── help.lua
 │       ├── htmldjango.lua
 │       ├── html.lua
 │       ├── javascript.lua
@@ -134,7 +133,7 @@ nvim
 └── snippets
     └── python.json
 
-14 directories, 65 files
+14 directories, 64 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
 

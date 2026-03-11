@@ -7,12 +7,6 @@ vim.opt_local.tabstop = 2
 vim.opt_local.shiftwidth = 2
 vim.opt_local.expandtab = true
 
--- Turn off signcolumn
-vim.opt_local.signcolumn = "no"
-vim.opt_local.number = false
-vim.opt_local.relativenumber = false
-vim.opt_local.foldcolumn = "1"
-
 -- Text display and editing
 vim.opt_local.wrap = true
 vim.opt_local.linebreak = true
