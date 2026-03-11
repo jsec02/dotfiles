@@ -124,7 +124,6 @@ projects() {
 
 # General
 export EDITOR=nvim
-export MANPAGER='nvim +Man!'
 export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe" # Use windows browser
 
 # Path
@@ -136,6 +135,12 @@ export PATH="$HOME/bash/backup/scripts:$PATH"
 
 # Python
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+# Man pages
+export MANPAGER='nvim +Man!'
+man() {
+    MANWIDTH=$(( COLUMNS - 3 )) command man "$@" # Fix manpage centering in nvim
+}
 
 
 # =================================== KEYMAPS ====================================
