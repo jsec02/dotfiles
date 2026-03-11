@@ -133,7 +133,7 @@ end
 
 --- Separate path and filename from a full path string
 local function separate_path_filename(full_path)
-    if full_path == "" or full_path == "[No Name]" then
+    if full_path == "" then
         return "", full_path
     end
 
@@ -194,6 +194,14 @@ function M.get_path()
         path_data.type = "regular"
         local result_str = handle_regular_file(man_path_cache[cache_key])
         path_data.dir_path, path_data.filename = separate_path_filename(result_str)
+    elseif bufname == "" or bufname == "[No Name]" then
+        path_data.type = "regular"
+        path_data.dir_path = ""
+        path_data.filename = "[No Name]"
+    elseif bufname == "" then
+        path_data.type = "regular"
+        path_data.dir_path = ""
+        path_data.filename = "[No Name]"
     else
         path_data.type = "regular"
         local result_str = handle_regular_file()
@@ -215,6 +223,12 @@ M.component = {
         local bufname = vim.fn.expand("%")
         local filetype = vim.bo.filetype
 
+        -- Hide for floating windows
+        local win_config = vim.api.nvim_win_get_config(0)
+        if win_config.relative ~= "" then
+            return false
+        end
+
         -- Hide for oil
         if filetype == "oil" then
             return false
@@ -230,8 +244,8 @@ M.component = {
             return true
         end
 
-        -- For regular files, only show if there's actually a filename
-        return bufname ~= "" and bufname ~= "[No Name]"
+        -- Show for all regular buffers, including [No Name]
+        return true
     end,
 
     flexible = 2,
