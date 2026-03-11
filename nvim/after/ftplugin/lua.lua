@@ -52,5 +52,5 @@ vim.keymap.set("n", "<leader>rD", function()
 end, { buffer = true, desc = "Run Lua With Args (Detached)" })
 
 -- Cleanup on filetype change
-vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")
-    .. "| setlocal tabstop< softtabstop< shiftwidth< expandtab< autoindent<"
+vim.b.undo_ftplugin = (vim.b.undo_ftplugin ~= "" and vim.b.undo_ftplugin .. " | " or "")
+    .. "setlocal tabstop< softtabstop< shiftwidth< expandtab< autoindent< statuscolumn< number< relativenumber< numberwidth<"

@@ -18,5 +18,5 @@ vim.keymap.set("n", "<Down>", "g<Down>", { buffer = true })
 vim.keymap.set("n", "<Up>", "g<Up>", { buffer = true })
 
 -- Cleanup on filetype change
-vim.b.undo_ftplugin = (vim.b.undo_ftplugin or "")
-    .. "| setlocal tabstop< shiftwidth< expandtab< wrap< linebreak< breakindent< spell<"
+vim.b.undo_ftplugin = (vim.b.undo_ftplugin ~= "" and vim.b.undo_ftplugin .. " | " or "")
+    .. "setlocal tabstop< shiftwidth< expandtab< wrap< linebreak< breakindent< spell<"
