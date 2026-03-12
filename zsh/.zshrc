@@ -9,8 +9,6 @@ setopt correct # Suggest corrections for mistyped commands
 
 PROMPT_EOL_MARK="" # Hide EOL sign ('%')
 
-stty -ixon # Enable Ctrl+S for forward history search
-
 
 # ==================================== PROMPT ====================================
 
