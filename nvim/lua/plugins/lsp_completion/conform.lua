@@ -34,6 +34,7 @@ return {
                 python = { "ruff_format", "ruff_organize_imports" },
                 markdown = { "injected", "dprint" },
                 bash = { "shfmt" },
+                sh = { "shfmt" }, -- conform resolves bash to sh via vim.filetype.match internally
                 html = { "prettier" },
                 htmldjango = { "djlint" },
                 sql = { "sqruff" },
