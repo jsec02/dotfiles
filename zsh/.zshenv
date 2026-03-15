@@ -2,6 +2,9 @@
 # =                                   .ZSHENV                                    =
 # ================================================================================
 
+# Only add to PATH if not already present
+typeset -U PATH path
+
 # Load secrets
 [ -f ~/.zshenv.local ] && source ~/.zshenv.local
 
