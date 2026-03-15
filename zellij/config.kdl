@@ -279,9 +279,6 @@ keybinds clear-defaults=true {
 
 env {
     TERM "vte-256color" // Make undercurls work in nvim
-    PYTHONPATH "/home/master/python/modules"
-    PYTHONBREAKPOINT "ipdb.set_trace"
-    BROWSER "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 }
 
 ui {
