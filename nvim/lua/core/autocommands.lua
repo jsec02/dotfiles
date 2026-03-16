@@ -97,6 +97,7 @@ vim.api.nvim_create_autocmd("FileChangedShell", {
 })
 
 -- Restore ftplugin window-local options after snacks picker preview
+-- Fixes instances where no line numbers are present on buffer
 autocmd("BufWinEnter", {
     group = "editor_behavior",
     callback = function(ev)
@@ -113,6 +114,20 @@ autocmd("BufWinEnter", {
                 vim.api.nvim_exec_autocmds("FileType", { pattern = ft, modeline = false })
             end)
         end)
+    end,
+})
+
+-- Correct cursor position when leaving visual block mode with virtualedit=block
+-- Without this, the cursor can get stuck in a virtual column past EOL
+vim.api.nvim_create_autocmd("ModeChanged", {
+    group = "editor_behavior",
+    pattern = "*:n",
+    callback = function()
+        local col = vim.fn.col(".")
+        local eol = vim.fn.col("$")
+        if col >= eol then
+            vim.cmd("normal! $")
+        end
     end,
 })
 
