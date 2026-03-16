@@ -18,21 +18,21 @@ return {
         local parsers = {
             "bash",
             "c",
+            "css",
             "diff",
             "html",
             "htmldjango",
+            "javascript",
             "json",
+            "kdl",
             "lua",
             "luadoc",
             "markdown",
             "markdown_inline",
+            "python",
             "query",
             "vim",
             "vimdoc",
-            "python",
-            "kdl",
-            "css",
-            "javascript",
         }
 
         local indent_disabled = {
