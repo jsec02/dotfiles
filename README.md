@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             61            674            633           4297
-Markdown                         3             24              8            262
+Lua                             60            665            630           4235
+Markdown                         3             26              8            262
 JSON                             2              0              0            243
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            71            708            641           5011
+SUM:                            70            701            638           4949
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -73,7 +73,6 @@ dotfiles
 │   │   │       ├── divider_generator.lua
 │   │   │       ├── eof_padding.lua
 │   │   │       ├── init.lua
-│   │   │       ├── line_number_colors.lua
 │   │   │       ├── status_column.lua
 │   │   │       ├── winbar_breadcrumbs.lua
 │   │   │       └── window_swapper.lua
@@ -122,6 +121,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-23 directories, 73 files
+23 directories, 72 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
