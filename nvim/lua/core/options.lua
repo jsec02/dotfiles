@@ -60,7 +60,7 @@ opt.ignorecase = true -- Case-insensitive search...
 opt.smartcase = true -- ...unless uppercase letters in query
 opt.incsearch = true -- Show search matches as you type
 opt.hlsearch = true -- Highlight all search matches
-opt.inccommand = "split" -- Preview substitute commands live
+-- opt.inccommand = "split" -- Preview substitute commands live
 
 -- ================================= INDENTATION ==================================
 
