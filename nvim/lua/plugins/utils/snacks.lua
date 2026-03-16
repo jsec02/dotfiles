@@ -111,6 +111,9 @@ return {
                 win = {
                     preview = {
                         wo = {
+                            statuscolumn = "  ",
+                            signcolumn = "no",
+                            number = false,
                             wrap = false,
                         },
                     },

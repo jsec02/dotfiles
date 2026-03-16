@@ -96,6 +96,26 @@ vim.api.nvim_create_autocmd("FileChangedShell", {
     end,
 })
 
+-- Restore ftplugin window-local options after snacks picker preview
+autocmd("BufWinEnter", {
+    group = "editor_behavior",
+    callback = function(ev)
+        local ft = vim.bo[ev.buf].filetype
+        local win = vim.api.nvim_get_current_win()
+        if ft == "" or vim.w[win].snacks_picker_preview then
+            return
+        end
+        vim.schedule(function()
+            if not vim.api.nvim_win_is_valid(win) then
+                return
+            end
+            vim.api.nvim_win_call(win, function()
+                vim.api.nvim_exec_autocmds("FileType", { pattern = ft, modeline = false })
+            end)
+        end)
+    end,
+})
+
 -- ============================ UI/VISUAL ENHANCEMENTS ============================
 
 augroup("ui_enhancements", { clear = true })
