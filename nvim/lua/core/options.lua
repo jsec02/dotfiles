@@ -78,6 +78,7 @@ opt.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]] -- Regex for numbered list 
 -- =================================== SPELLING ===================================
 
 opt.spelloptions = "camel" -- Treat camelCase word parts as separate words
+opt.spellfile = vim.fn.expand("~/.config/nvim/spell/en.utf-8.add") -- Point to spellfile
 
 -- ================================== PROVIDERS ===================================
 

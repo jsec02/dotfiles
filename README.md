@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            667            635           4247
+Lua                             60            667            635           4248
 Markdown                         3             24              8            260
 JSON                             2              0              0            243
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            70            701            643           4959
+SUM:                            70            701            643           4960
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -109,8 +109,11 @@ dotfiles
 │   │           ├── whichkey.lua
 │   │           └── zellij_nav.lua
 │   ├── README.md
-│   └── snippets
-│       └── python.json
+│   ├── snippets
+│   │   └── python.json
+│   └── spell
+│       ├── en.utf-8.add
+│       └── en.utf-8.add.spl
 ├── README.md
 ├── sqlite
 ├── ssh
@@ -121,6 +124,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-23 directories, 72 files
+24 directories, 74 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
