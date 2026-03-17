@@ -35,9 +35,7 @@ return {
             "vimdoc",
         }
 
-        local indent_disabled = {
-            bash = true,
-        }
+        local indent_disabled = {}
 
         require("nvim-treesitter").install(parsers)
 
