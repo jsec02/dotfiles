@@ -53,6 +53,7 @@ opt.autoread = true -- Enable automatic file reloading (requires checktime trigg
 opt.infercase = true -- Infer case in built-in completion
 opt.virtualedit = "block" -- Allow going past end of line in blockwise mode
 opt.shada = "'100,<50,s10,:1000,/100,@100,h" -- Limit ShaDa file (for startup)
+opt.concealcursor = "n" -- keep concealed even in normal mode on cursor line
 
 -- ================================== SEARCHING ===================================
 
