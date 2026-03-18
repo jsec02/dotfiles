@@ -3,6 +3,11 @@ Host pi
     User master
     IdentityFile ~/.ssh/id_ed25519
 
+Host windows
+    HostName 10.0.0.179
+    User master
+    IdentityFile ~/.ssh/id_ed25519
+
 Host kali
     HostName 10.0.0.190
     User master
