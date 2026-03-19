@@ -16,6 +16,9 @@ hl(0, "Pmenu", { fg = c.ui.text_active })
 -- Cursorline
 hl(0, "CursorLine", { bg = c.ui.current_line })
 
+-- Quickfix
+hl(0, "QuickFixLine", {})
+
 -- Statusline
 hl(0, "StatusLine", { fg = c.ui.text })
 
@@ -31,6 +34,7 @@ hl(0, "WinBar", { fg = c.syntax.text })
 -- Blink cmp
 hl(0, "BlinkCmpMenuBorder", { fg = c.ui.border })
 hl(0, "BlinkCmpDocBorder", { fg = c.ui.border })
+hl(0, "BlinkCmpLabelMatch", { fg = c.ui.blue, bold = true })
 hl(0, "BlinkCmpSignatureHelpBorder", { fg = c.ui.border })
 
 -- Snacks picker

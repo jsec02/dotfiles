@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            642            627           4153
+Lua                             60            639            614           4062
 Markdown                         3             24              8            266
-JSON                             2              0              0            244
+JSON                             2              0              0            245
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            70            676            635           4872
+SUM:                            70            673            622           4782
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -103,9 +103,9 @@ dotfiles
 │   │           ├── flash.lua
 │   │           ├── guess_indent.lua
 │   │           ├── oil.lua
+│   │           ├── quicker.lua
 │   │           ├── snacks.lua
 │   │           ├── todo_comments.lua
-│   │           ├── trouble.lua
 │   │           ├── whichkey.lua
 │   │           └── zellij_nav.lua
 │   ├── README.md
