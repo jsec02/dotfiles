@@ -31,7 +31,6 @@ hl(0, "WinBar", { fg = c.syntax.text })
 -- Blink cmp
 hl(0, "BlinkCmpMenuBorder", { fg = c.ui.border })
 hl(0, "BlinkCmpDocBorder", { fg = c.ui.border })
-hl(0, "BlinkCmpLabelMatch", { fg = c.ui.blue, bold = true })
 hl(0, "BlinkCmpSignatureHelpBorder", { fg = c.ui.border })
 
 -- Snacks picker
