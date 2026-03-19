@@ -92,21 +92,6 @@ map("n", "<leader>wt", "<C-w>T", { desc = "Break out into a new tab" })
 map("n", "<leader>wh", ":new<CR>", { desc = "Horizontal Split" })
 map("n", "<leader>wv", ":vnew<CR>", { desc = "Vertical Split" })
 
--- Tabs
-map("n", "<leader>TT", "<Cmd>tabnew<CR>", { desc = "New Tab" })
-map("n", "<leader>Tn", "<Cmd>tabnext<CR>", { desc = "Next Tab" })
-map("n", "<leader>Tc", "<Cmd>tabclose<CR>", { desc = "Close Tab" })
-map("n", "<leader>Tp", "<Cmd>tabprevious<CR>", { desc = "Previous Tab" })
-map("n", "<leader>To", function()
-    local tab_count = #vim.api.nvim_list_tabpages()
-    if tab_count > 1 then
-        vim.cmd("tabonly")
-        vim.notify(string.format("Closed %d tab%s", tab_count - 1, tab_count - 1 == 1 and "" or "s"))
-    else
-        vim.notify("No tabs to close")
-    end
-end, { desc = "Close Other Tabs" })
-
 -- Commenting
 map("n", "gco", "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" })
 map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" })

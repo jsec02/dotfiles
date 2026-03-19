@@ -2,8 +2,6 @@
 -- =                                 SNACKS.NVIM                                  =
 -- ================================================================================
 
-local tabs_picker = require("custom.extensions.tabs_picker")
-
 return {
     "folke/snacks.nvim",
     -- enabled = false,
@@ -138,17 +136,6 @@ return {
                     },
                     icons = {
                         layout = { preset = "select" },
-                    },
-                    tabs = tabs_picker,
-                    explorer = {
-                        win = {
-                            list = {
-                                keys = {
-                                    ["<Left>"] = "explorer_close",
-                                    ["<Right>"] = "confirm",
-                                },
-                            },
-                        },
                     },
                 },
             }

@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            667            635           4253
+Lua                             59            637            609           4049
 Markdown                         3             24              8            266
 JSON                             2              0              0            244
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            70            701            643           4972
+SUM:                            69            671            617           4768
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -65,8 +65,7 @@ dotfiles
 │   │   ├── custom
 │   │   │   ├── extensions
 │   │   │   │   ├── heirline_path.lua
-│   │   │   │   ├── highlights.lua
-│   │   │   │   └── tabs_picker.lua
+│   │   │   │   └── highlights.lua
 │   │   │   └── modules
 │   │   │       ├── code_debugger.lua
 │   │   │       ├── code_runner.lua
@@ -124,6 +123,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-24 directories, 74 files
+24 directories, 73 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
