@@ -9,7 +9,8 @@ return {
     opts = {
         preset = "helix",
         delay = 0,
-        icons = { mappings = false, breadcrumb = "", group = "" },
+        sort = { "group", "alphanum", "lower" },
+        icons = { mappings = false, group = "" },
         defaults = {},
         show_help = true,
         spec = {
@@ -18,7 +19,6 @@ return {
             { "<leader>c", group = "Code", mode = { "n", "v" } },
             { "<leader>d", group = "Debug" },
             { "<leader>i", group = "Insert" },
-            { "<leader>C", group = "Comment" },
             { "<leader>f", group = "File/Find", mode = { "n", "v" } },
             { "<leader>g", group = "Git", mode = { "n", "v" } },
             { "<leader>r", group = "Run" },

@@ -14,7 +14,7 @@ hl(0, "FloatBorder", { fg = c.ui.border })
 hl(0, "Pmenu", { fg = c.ui.text_active })
 
 -- Cursorline
-hl(0, "CursorLine", { bg = nil })
+hl(0, "CursorLine", { bg = c.ui.current_line })
 
 -- Statusline
 hl(0, "StatusLine", { fg = c.ui.text })
