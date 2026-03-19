@@ -98,30 +98,30 @@ vim.api.nvim_create_autocmd("FileChangedShell", {
 
 -- Restore ftplugin window-local options after snacks picker preview
 -- Fixes instances where no line numbers are present on buffer
-autocmd({ "WinEnter" }, {
-    group = "editor_behavior",
-    callback = function(ev)
-        local ft = vim.bo[ev.buf].filetype
-        local bt = vim.bo[ev.buf].buftype
-        local win = vim.api.nvim_get_current_win()
-        local buf = ev.buf
-        if ft == "" or bt ~= "" or vim.w[win].snacks_picker_preview then
-            return
-        end
-        vim.schedule(function()
-            if not vim.api.nvim_win_is_valid(win) then
-                return
-            end
-            -- make sure the window is still showing the same buffer
-            if vim.api.nvim_win_get_buf(win) ~= buf then
-                return
-            end
-            vim.api.nvim_win_call(win, function()
-                vim.api.nvim_exec_autocmds("FileType", { pattern = ft, modeline = false })
-            end)
-        end)
-    end,
-})
+-- autocmd({ "WinEnter", "BufWinEnter" }, {
+--     group = "editor_behavior",
+--     callback = function(ev)
+--         local ft = vim.bo[ev.buf].filetype
+--         local bt = vim.bo[ev.buf].buftype
+--         local win = vim.api.nvim_get_current_win()
+--         local buf = ev.buf
+--         if ft == "" or bt ~= "" or vim.w[win].snacks_picker_preview then
+--             return
+--         end
+--         vim.schedule(function()
+--             if not vim.api.nvim_win_is_valid(win) then
+--                 return
+--             end
+--             -- make sure the window is still showing the same buffer
+--             if vim.api.nvim_win_get_buf(win) ~= buf then
+--                 return
+--             end
+--             vim.api.nvim_win_call(win, function()
+--                 vim.api.nvim_exec_autocmds("FileType", { pattern = ft, modeline = false })
+--             end)
+--         end)
+--     end,
+-- })
 
 -- Correct cursor position when leaving visual block mode with virtualedit=block
 -- Without this, the cursor can get stuck in a virtual column past EOL
