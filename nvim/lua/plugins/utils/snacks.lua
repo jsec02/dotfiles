@@ -160,8 +160,8 @@ return {
         { "<leader><space>", function() Snacks.picker.buffers() end, desc = "Buffers" },
         { "<leader>/", function() Snacks.picker.lines({ layout = "select", on_show = function() end, title = "Current Buffer Fuzzy" }) end, desc = "Fuzzy Current Buffer" },
         { "<leader>,", function() Snacks.picker.pick("tabs") end, desc = "Tabs" },
-        { "<leader>q", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
-        { "<leader>l", function() Snacks.picker.loclist() end, desc = "Location List" },
+        -- { "<leader>q", function() Snacks.picker.qflist() end, desc = "Quickfix List" },
+        -- { "<leader>l", function() Snacks.picker.loclist() end, desc = "Location List" },
         -- buffer
         { "<leader>bc", function() Snacks.bufdelete() end, desc = "Close Buffer" },
         -- find
