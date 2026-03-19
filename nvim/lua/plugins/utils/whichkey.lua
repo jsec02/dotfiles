@@ -17,7 +17,7 @@ return {
             { "<leader>b", group = "Buffer" },
             { "<leader>c", group = "Code", mode = { "n", "v" } },
             { "<leader>d", group = "Debug" },
-            { "<leader>D", group = "Divider" },
+            { "<leader>i", group = "Insert" },
             { "<leader>C", group = "Comment" },
             { "<leader>f", group = "File/Find", mode = { "n", "v" } },
             { "<leader>g", group = "Git", mode = { "n", "v" } },
