@@ -85,6 +85,10 @@ alias history="history 0"
 alias histoff='unset HISTFILE'
 alias histon='HISTFILE=~/.zsh_history'
 
+# Auto suggestions
+alias suggestoff='ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=0'
+alias suggeston='unset ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE'
+
 # nvim
 alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
