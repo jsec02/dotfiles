@@ -29,12 +29,6 @@ return {
                     client.server_capabilities.documentRangeFormattingProvider = false
                 end
 
-                -- Disable markdown diagnostics
-                if client and client.name == "markdown_oxide" then
-                    client.handlers = client.handlers or {}
-                    client.handlers["textDocument/publishDiagnostics"] = function() end
-                end
-
                 local map = function(keys, func, desc, mode)
                     mode = mode or "n"
                     vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
