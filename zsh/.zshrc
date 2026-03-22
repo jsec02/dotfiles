@@ -55,8 +55,8 @@ fi
 
 
 # Start zellij automatically
-if command -v zellij &>/dev/null && [[ -z "$ZELLIJ" ]]; then
-    zellij attach master 2>/dev/null || zellij -s master
+if command -v zellij &>/dev/null; then
+    eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
 # Terminal title for zellij
