@@ -59,6 +59,12 @@ if command -v zellij &>/dev/null; then
     eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
+# Preconfigured Tab #1
+if [[ -n "$ZELLIJ" && "$ZELLIJ_PANE_ID" == "0" ]]; then
+    cd ~/vault/educational
+    zellij action new-pane --cwd ~/vault/documentation -- $SHELL
+fi
+
 # Terminal title for zellij
 precmd() {
     print -Pn "\e]0;%n@%m:%~\a"
