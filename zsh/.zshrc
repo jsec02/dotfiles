@@ -55,15 +55,8 @@ fi
 
 
 # Start zellij automatically
-if command -v zellij &>/dev/null; then
-    eval "$(zellij setup --generate-auto-start zsh)"
-fi
-
-# Preconfigured layout
-if [[ -n "$ZELLIJ" && "$ZELLIJ_PANE_ID" == "0" ]]; then
-    cd ~/vault/educational
-    # https://github.com/zellij-org/zellij/issues/2766
-    zellij action new-pane --cwd ~/vault/documentation -- $SHELL
+if command -v zellij &>/dev/null && [[ -z "$ZELLIJ" ]]; then
+    zellij attach master 2>/dev/null || zellij -s master
 fi
 
 # Terminal title for zellij
