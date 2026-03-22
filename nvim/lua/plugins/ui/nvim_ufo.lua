@@ -5,10 +5,10 @@
 return {
     "kevinhwang91/nvim-ufo",
     -- enabled = false,
+    event = "VeryLazy",
     dependencies = {
         "kevinhwang91/promise-async",
     },
-    event = "BufReadPost",
     config = function()
         -- Folding settings
         vim.o.foldlevel = 99
