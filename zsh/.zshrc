@@ -79,7 +79,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
 fi
 
-
 # History
 alias history="history 0"
 alias histoff='unset HISTFILE'
@@ -99,6 +98,15 @@ alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git pus
 
 # VirtualBox
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
+
+# Dotflies
+alias dotfiles='cd ~/dotfiles/'
+
+# Vault
+alias documentation='cd ~/vault/documentation/'
+alias educational='cd ~/vault/educational/'
+alias personal='cd ~/vault/personal/'
+alias professional='cd ~/vault/professional/'
 
 # Projects
 alias alien_invasion='cd ~/python/projects/alien_invasion'
