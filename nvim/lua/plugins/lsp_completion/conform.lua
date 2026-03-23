@@ -58,9 +58,10 @@ return {
                 },
                 shfmt = {
                     args = {
-                        "-i",
+                        "--indent",
                         "2",
-                        "-ci",
+                        "--case-indent",
+                        "--binary-next-line",
                         "-",
                     },
                 },
