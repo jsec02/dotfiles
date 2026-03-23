@@ -4,6 +4,7 @@
 
 return {
     "stevearc/quicker.nvim",
+    -- enabled = false,
     ft = "qf",
     opts = {
         constrain_cursor = false,
