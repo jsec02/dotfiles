@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             59            613            612           3983
+Lua                             59            613            613           3983
 Markdown                         3             24              8            264
-JSON                             2              0              0            244
+JSON                             2              0              0            245
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            69            647            620           4700
+SUM:                            69            647            621           4701
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -80,7 +80,7 @@ dotfiles
 │   │       │   ├── autotag.lua
 │   │       │   ├── gitsigns.lua
 │   │       │   ├── mini_ai.lua
-│   │       │   ├── surround.lua
+│   │       │   ├── mini_surround.lua
 │   │       │   ├── treesitter.lua
 │   │       │   └── treesj.lua
 │   │       ├── lsp_completion

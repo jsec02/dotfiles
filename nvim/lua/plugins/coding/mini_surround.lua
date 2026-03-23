@@ -1,12 +1,13 @@
 -- ================================================================================
--- =                                NVIM-SURROUND                                 =
+-- =                                MINI.SURROUND                                 =
 -- ================================================================================
 
 return {
-    "kylechui/nvim-surround",
-    enabled = false,
+    "echasnovski/mini.surround",
+    -- enabled = false,
     event = "VeryLazy",
+    version = "*",
     config = function()
-        require("nvim-surround").setup({})
+        require("mini.surround").setup({})
     end,
 }
