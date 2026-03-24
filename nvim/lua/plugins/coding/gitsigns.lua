@@ -37,7 +37,6 @@ return {
                 changedelete = { text = "▎" },
             },
             attach_to_untracked = true,
-            update_debounce = 100,
             on_attach = function(_)
                 local gs = package.loaded.gitsigns
                 local function map(mode, l, r, desc)
