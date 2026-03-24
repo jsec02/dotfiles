@@ -109,8 +109,11 @@ map("n", "[l", vim.cmd.lprev, { desc = "Previous Location" })
 -- Clear search, diff update and redraw (refresh ui)
 map("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", { desc = "Refresh UI" })
 
--- Disable backspace
+-- Disable backspace in normal mode
 map("n", "<BS>", "<Nop>")
+
+-- Disable enter in normal mode
+map("n", "<CR>", "<Nop>")
 
 -- Make esc clear snippet highlighting
 vim.keymap.set("s", "<Esc>", function()
