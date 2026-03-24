@@ -14,7 +14,7 @@ vim.opt_local.breakindent = true
 vim.opt_local.spell = true
 
 -- Enable conceal level by default
--- vim.opt_local.conceallevel = 2
+vim.opt_local.conceallevel = 2
 
 -- Navigate visual lines instead of logical lines
 vim.keymap.set("n", "<Down>", "g<Down>", { buffer = true })
