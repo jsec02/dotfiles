@@ -42,19 +42,6 @@ hl(0, "SnacksPickerDir", { fg = c.syntax.comment })
 hl(0, "SnacksPickerBufFlags", { fg = c.syntax.comment })
 hl(0, "SnacksPickerCol", { fg = c.syntax.comment })
 
--- Noice
-hl(0, "NoiceCmdline", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePopup", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlineIcon", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePrompt", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePopupBorderCmdline", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePopupTitle", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePopupBorder", { fg = c.ui.yellow })
-hl(0, "NoiceCmdlinePopupPrompt", { fg = c.ui.yellow })
-hl(0, "NoiceLspProgressClient", { fg = c.ui.blue })
-hl(0, "NoiceLspProgressSpinner", { fg = c.ui.blue })
-hl(0, "NoiceLspProgressTitle", { fg = c.syntax.text })
-
 -- Whichkey
 hl(0, "WhichKeySeparator", { fg = c.syntax.comment })
 
@@ -72,12 +59,6 @@ hl(0, "RainbowDelimiters5", { fg = c.ui.green })
 hl(0, "RainbowDelimiters6", { fg = c.ui.purple })
 hl(0, "RainbowDelimiters7", { fg = c.ui.cyan })
 
--- Venv picker
-hl(0, "VenvPickerActive", { fg = c.ui.yellow })
-
--- Session picker
-hl(0, "SessionPickerActive", { fg = c.ui.blue })
-
 -- Heirline path
 hl(0, "HeirlinePathDir", { fg = c.syntax.comment })
 hl(0, "HeirlinePathFile", { fg = c.syntax.text })
@@ -88,14 +69,6 @@ hl(0, "HeirlinePathTerminal", { fg = c.syntax.text })
 hl(0, "HeirlinePathTerminalPID", { fg = c.syntax.comment })
 hl(0, "HeirlinePathLock", { fg = c.ui.orange })
 hl(0, "HeirlinePathHealth", { fg = c.syntax.text })
-
--- Mode colors
-hl(0, "ModeColorNormal", { fg = c.ui.blue })
-hl(0, "ModeColorInsert", { fg = c.ui.green })
-hl(0, "ModeColorVisual", { fg = c.ui.purple })
-hl(0, "ModeColorCommand", { fg = c.ui.yellow })
-hl(0, "ModeColorTerminal", { fg = c.ui.orange })
-hl(0, "ModeColorReplace", { fg = c.ui.red })
 
 -- Indent guides
 hl(0, "IndentGuidesChar", { fg = c.ui.border })
