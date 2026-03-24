@@ -110,6 +110,15 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end,
 })
 
+-- Immediately close command-line history windows (q:, q/, q?)
+-- Disabling keymaps doesn't work reliably due to timeoutlen
+vim.api.nvim_create_autocmd("CmdwinEnter", {
+    group = "editor_behavior",
+    callback = function()
+        vim.cmd("quit")
+    end,
+})
+
 -- ============================ UI/VISUAL ENHANCEMENTS ============================
 
 augroup("ui_enhancements", { clear = true })
