@@ -81,8 +81,6 @@ fi
 
 # History
 alias history="history 0"
-alias histoff='unset HISTFILE'
-alias histon='HISTFILE=~/.zsh_history'
 
 # Auto suggestions
 alias suggestoff='ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=0'
@@ -206,9 +204,10 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 # Zsh history options
-setopt HIST_IGNORE_DUPS      # Don't record duplicate commands
-setopt HIST_IGNORE_SPACE     # Don't record commands starting with space
-setopt SHARE_HISTORY         # Share history across all sessions
+setopt HIST_IGNORE_DUPS # Don't record duplicate commands
+setopt HIST_IGNORE_SPACE # Don't record commands starting with space
+setopt SHARE_HISTORY # Share history across all sessions
+setopt HIST_IGNORE_SPACE # Prefix commands with space to exclude from history
 
 
 # =================================== PLUGINS ====================================
