@@ -3,7 +3,7 @@
 -- ================================================================================
 
 return {
-    "vzze/cmdline.nvim",
+    "jb49088/cmdline.nvim",
     -- enabled = false,
     opts = {
         hl = {

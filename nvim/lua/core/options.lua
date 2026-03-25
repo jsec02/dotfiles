@@ -33,7 +33,7 @@ opt.linebreak = true -- Wrap lines at 'breakat' (if 'wrap' is set)
 opt.scrolloff = 10 -- Vertical scroll offset
 opt.sidescrolloff = 10 -- Horizontal scroll offset
 opt.smoothscroll = true -- Smooth scrolling with soft wrapping
-opt.winborder = "none" -- Rounded borders for floating windows
+opt.winborder = "rounded" -- Rounded borders for floating windows
 opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
 -- opt.shortmess:append("I") -- Dont show intro message
 
