@@ -13,8 +13,6 @@ PROMPT_EOL_MARK="" # Hide EOL sign ('%')
 # ==================================== PROMPT ====================================
 
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
 setopt prompt_subst
 PROMPT='%F{white}╭─%f${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }%B%F{green}%n@%m%f%b %B%F{12}%~%f%b
 %F{white}╰─$%f '
