@@ -42,16 +42,7 @@ if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
 
-# ==================================== ZELLIJ ====================================
-
-# Start zellij automatically
-if command -v zellij &>/dev/null && [[ "$ZELLIJ" != "0" ]]; then
-    zellij attach -c master
-fi
-
-
 # =================================== ALIASES ====================================
-
 
 # General
 alias grep='grep --color=auto'
