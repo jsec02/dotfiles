@@ -446,7 +446,7 @@ session_name "master"
 // if it is already running or creates it otherwise.
 // Default: false
 //
-attach_to_session true
+// attach_to_session true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -467,7 +467,7 @@ attach_to_session true
 //   - true
 //   - false (default)
 //
-// serialize_pane_viewport false
+serialize_pane_viewport true
 
 // Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
@@ -484,7 +484,7 @@ attach_to_session true
 
 // How often in seconds sessions are serialized
 //
-// serialization_interval 10000
+serialization_interval 60
 
 // Enable or disable writing of session metadata to disk (if disabled, other sessions might not know
 // metadata info on this session)
