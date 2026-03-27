@@ -149,25 +149,27 @@ zle -N zle-keymap-select
 zle -N zle-line-init
 
 # Clipboard integration
-function _clip_copy() { wl-copy }
+if command -v wl-copy &>/dev/null; then
+    function _clip_copy() { wl-copy }
 
-function _vi-yank-clip()            { zle vi-yank;           echo -n "$CUTBUFFER" | _clip_copy }
-function _vi-yank-eol-clip()        { zle vi-yank-eol;       echo -n "$CUTBUFFER" | _clip_copy }
-function _vi-yank-whole-line-clip() { zle vi-yank-whole-line; echo -n "$CUTBUFFER" | _clip_copy }
-function _vi-delete-clip()          { zle vi-delete;         echo -n "$CUTBUFFER" | _clip_copy }
-function _vi-change-clip()          { zle vi-change;         echo -n "$CUTBUFFER" | _clip_copy }
+    function _vi-yank-clip()            { zle vi-yank;           echo -n "$CUTBUFFER" | _clip_copy }
+    function _vi-yank-eol-clip()        { zle vi-yank-eol;       echo -n "$CUTBUFFER" | _clip_copy }
+    function _vi-yank-whole-line-clip() { zle vi-yank-whole-line; echo -n "$CUTBUFFER" | _clip_copy }
+    function _vi-delete-clip()          { zle vi-delete;         echo -n "$CUTBUFFER" | _clip_copy }
+    function _vi-change-clip()          { zle vi-change;         echo -n "$CUTBUFFER" | _clip_copy }
 
-zle -N _vi-yank-clip
-zle -N _vi-yank-eol-clip
-zle -N _vi-yank-whole-line-clip
-zle -N _vi-delete-clip
-zle -N _vi-change-clip
+    zle -N _vi-yank-clip
+    zle -N _vi-yank-eol-clip
+    zle -N _vi-yank-whole-line-clip
+    zle -N _vi-delete-clip
+    zle -N _vi-change-clip
 
-bindkey -M vicmd 'y'  _vi-yank-clip
-bindkey -M vicmd 'Y'  _vi-yank-eol-clip
-bindkey -M vicmd 'yy' _vi-yank-whole-line-clip
-bindkey -M vicmd 'd'  _vi-delete-clip
-bindkey -M vicmd 'c'  _vi-change-clip
+    bindkey -M vicmd 'y'  _vi-yank-clip
+    bindkey -M vicmd 'Y'  _vi-yank-eol-clip
+    bindkey -M vicmd 'yy' _vi-yank-whole-line-clip
+    bindkey -M vicmd 'd'  _vi-delete-clip
+    bindkey -M vicmd 'c'  _vi-change-clip
+fi
 
 # =================================== HISTORY ====================================
 
