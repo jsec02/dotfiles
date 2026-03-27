@@ -2,6 +2,24 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 
 Inspired by [LazyVim](https://github.com/LazyVim/LazyVim) and [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Features
 
 - Lazy loading with [lazy.nvim](https://github.com/folke/lazy.nvim)
@@ -39,12 +57,12 @@ UIEnter   28.4ms (+5.4ms)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            612            601           3969
+Lua                             60            612            601           3974
 JSON                             2              0              0            245
-Markdown                         2             16              4            149
+Markdown                         2             34              4            149
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            65            628            605           4366
+SUM:                            65            646            605           4371
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->

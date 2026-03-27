@@ -237,10 +237,15 @@ end
 vim.api.nvim_set_hl(0, "CustomStatusColumnMark", { link = "DiagnosticHint", default = true })
 
 local timer = assert((vim.uv or vim.loop).new_timer())
-timer:start(config.refresh, config.refresh, function()
-    sign_cache = {}
-    cache = {}
-    icon_cache = {}
-end)
+timer:start(
+    config.refresh,
+    config.refresh,
+    vim.schedule_wrap(function()
+        sign_cache = {}
+        cache = {}
+        icon_cache = {}
+        vim.cmd("redraw!")
+    end)
+)
 
 return M
