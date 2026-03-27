@@ -9,17 +9,13 @@ setopt correct # Suggest corrections for mistyped commands
 
 PROMPT_EOL_MARK="" # Hide EOL sign ('%')
 
-
 # ==================================== PROMPT ====================================
-
 
 setopt prompt_subst
 PROMPT='%F{white}╭─%f${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }%B%F{green}%n@%m%f%b %B%F{12}%~%f%b
 %F{white}╰─$%f '
 
-
 # ================================= COMPLETIONS ==================================
-
 
 autoload -Uz compinit
 
@@ -40,27 +36,18 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
-
 # ==================================== DIRENV ====================================
-
 
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
 
-
 # ==================================== ZELLIJ ====================================
 
-
 # Start zellij automatically
-if command -v zellij &>/dev/null; then
-    eval "$(zellij setup --generate-auto-start zsh)"
+if command -v zellij &>/dev/null && [[ "$ZELLIJ" != "0" ]]; then
+    zellij attach -c master
 fi
-
-# Terminal title for zellij
-precmd() {
-    print -Pn "\e]0;%n@%m:%~\a"
-}
 
 
 # =================================== ALIASES ====================================
@@ -121,19 +108,14 @@ projects() {
   alias | grep "cd ~" | sed "s/alias /  /" | sed "s/='cd /  -> /" | sed "s/'$//" | sort
 }
 
-
 # ================================== MAN PAGES ===================================
-
 
 export MANPAGER='nvim +Man!'
 man() {
     MANWIDTH=$(( COLUMNS - 3 )) command man "$@" # Fix manpage centering in nvim
 }
 
-
-
 # =================================== VI MODE ====================================
-
 
 bindkey -v
 
@@ -202,9 +184,7 @@ setopt HIST_IGNORE_SPACE # Don't record commands starting with space
 setopt SHARE_HISTORY # Share history across all sessions
 setopt HIST_IGNORE_SPACE # Prefix commands with space to exclude from history
 
-
 # =================================== PLUGINS ====================================
-
 
 # zsh-autopair
 # git clone https://github.com/hlissner/zsh-autopair ~/.zsh/zsh-autopair
@@ -219,9 +199,7 @@ fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
-
 # ================================ ABBREVIATIONS =================================
-
 
 typeset -Ag abbreviations
 abbreviations=(
