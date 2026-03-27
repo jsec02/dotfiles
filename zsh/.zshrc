@@ -9,6 +9,10 @@ setopt correct # Suggest corrections for mistyped commands
 
 PROMPT_EOL_MARK="" # Hide EOL sign ('%')
 
+precmd() {
+    print -Pn "\e]0;%n@%m:%~\a" # Terminal title
+}
+
 # ==================================== PROMPT ====================================
 
 setopt prompt_subst
@@ -40,6 +44,13 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
+fi
+
+# ==================================== ZELLIJ ====================================
+
+# Start zellij automatically
+if command -v zellij &>/dev/null; then
+    eval "$(zellij setup --generate-auto-start zsh)"
 fi
 
 # =================================== ALIASES ====================================
@@ -158,9 +169,7 @@ bindkey -M vicmd 'yy' _vi-yank-whole-line-clip
 bindkey -M vicmd 'd'  _vi-delete-clip
 bindkey -M vicmd 'c'  _vi-change-clip
 
-
 # =================================== HISTORY ====================================
-
 
 # History file location
 export HISTFILE=~/.zsh_history

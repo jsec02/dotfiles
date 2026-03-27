@@ -351,7 +351,7 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 
 // The folder in which Zellij will look for layouts
 // (Requires restart)
@@ -377,7 +377,7 @@ theme_dir "/home/master/.config/zellij/themes"
 //   - true (default, enabled)
 //   - false
 //
-pane_frames false
+// pane_frames false
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -440,7 +440,7 @@ scrollback_editor "/usr/bin/nvim"
 // otherwise this will error if such a session exists.
 // Default: <RANDOM>
 //
-session_name "master"
+// session_name "My singleton session"
 
 // When `session_name` is provided, attaches to that session
 // if it is already running or creates it otherwise.
@@ -460,14 +460,14 @@ session_name "master"
 //   - true (default)
 //   - false
 //
-// session_serialization false
+session_serialization false
 
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
 //   - true
 //   - false (default)
 //
-serialize_pane_viewport true
+// serialize_pane_viewport false
 
 // Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
@@ -484,7 +484,7 @@ serialize_pane_viewport true
 
 // How often in seconds sessions are serialized
 //
-serialization_interval 60
+// serialization_interval 10000
 
 // Enable or disable writing of session metadata to disk (if disabled, other sessions might not know
 // metadata info on this session)
