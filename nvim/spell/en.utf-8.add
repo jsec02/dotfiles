@@ -73,3 +73,6 @@ configs
 initramfs
 WLAN/!
 WLAN
+traceroute
+NSE
+nmap
