@@ -69,3 +69,7 @@ userspace
 whitespace
 xz
 zshbuiltins
+configs
+initramfs
+WLAN/!
+WLAN
