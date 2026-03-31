@@ -15,9 +15,9 @@ return {
         })
         vim.opt.runtimepath:prepend(install_dir)
 
+        -- Parsers to install (parser names, not filetypes)
         local parsers = {
             "bash",
-            "sh",
             "c",
             "css",
             "diff",
@@ -36,12 +36,17 @@ return {
             "vimdoc",
         }
 
+        -- Filetypes that should activate treesitter
+        -- sh filetype uses bash parser, so include it here but not in parsers
+        local filetypes = vim.list_extend(vim.deepcopy(parsers), { "sh" })
+
+        -- Filetypes where treesitter indent should be disabled
         local indent_disabled = {}
 
         require("nvim-treesitter").install(parsers)
 
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = parsers,
+            pattern = filetypes,
             callback = function()
                 vim.treesitter.start()
                 if not indent_disabled[vim.bo.filetype] then
