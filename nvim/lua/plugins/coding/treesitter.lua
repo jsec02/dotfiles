@@ -17,6 +17,7 @@ return {
 
         local parsers = {
             "bash",
+            "sh",
             "c",
             "css",
             "diff",

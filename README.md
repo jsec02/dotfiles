@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             60            611            590           3972
+Lua                             60            611            590           3973
 Markdown                         3             42              8            266
 JSON                             2              0              0            245
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            70            663            598           4692
+SUM:                            70            663            598           4693
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -36,7 +36,6 @@ dotfiles
 ├── nvim
 │   ├── after
 │   │   └── ftplugin
-│   │       ├── bash.lua
 │   │       ├── css.lua
 │   │       ├── htmldjango.lua
 │   │       ├── html.lua
@@ -48,6 +47,7 @@ dotfiles
 │   │       ├── markdown.lua
 │   │       ├── ps1.lua
 │   │       ├── python.lua
+│   │       ├── sh.lua
 │   │       └── sql.lua
 │   ├── COMMANDS.md
 │   ├── init.lua

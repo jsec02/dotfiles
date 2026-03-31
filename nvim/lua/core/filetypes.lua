@@ -4,13 +4,13 @@
 
 vim.filetype.add({
     extension = {
-        sh = "bash",
-        zsh = "bash",
+        bash = "sh",
+        zsh = "sh",
     },
     filename = {
-        [".zshrc"] = "bash",
-        [".zshenv"] = "bash",
-        [".zshenv.local"] = "bash",
-        [".zprofile"] = "bash",
+        [".zshrc"] = "sh",
+        [".zshenv"] = "sh",
+        [".zshenv.local"] = "sh",
+        [".zprofile"] = "sh",
     },
 })
