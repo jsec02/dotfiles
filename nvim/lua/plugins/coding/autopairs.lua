@@ -9,6 +9,7 @@ return {
     config = function()
         local autopairs = require("nvim-autopairs")
         autopairs.setup({})
+        autopairs.disable()
         Snacks.toggle({
             name = "Auto Pairing",
             get = function()
