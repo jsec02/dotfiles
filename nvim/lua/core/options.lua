@@ -36,6 +36,7 @@ opt.smoothscroll = true -- Smooth scrolling with soft wrapping
 opt.winborder = "rounded" -- Rounded borders for floating windows
 opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
 -- opt.shortmess:append("I") -- Dont show intro message
+-- opt.showmatch = true -- Briefly hover cursor over opening parenthesis
 
 -- =================================== BEHAVIOR ===================================
 
