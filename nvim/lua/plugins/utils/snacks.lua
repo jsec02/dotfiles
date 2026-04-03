@@ -107,14 +107,6 @@ return {
                     select = {},
                 },
                 win = {
-                    preview = {
-                        wo = {
-                            statuscolumn = " ",
-                            signcolumn = "no",
-                            number = false,
-                            wrap = false,
-                        },
-                    },
                     input = {
                         keys = {
                             ["<Esc>"] = { "close", mode = { "i", "n" } },
