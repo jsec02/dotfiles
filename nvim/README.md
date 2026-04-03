@@ -58,11 +58,11 @@ UIEnter   28.4ms (+5.4ms)
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             60            610            594           3953
-JSON                             2              0              0            245
+JSON                             3              0              0            251
 Markdown                         2             34              4            149
 TOML                             1              0              0              3
 -------------------------------------------------------------------------------
-SUM:                            65            644            598           4350
+SUM:                            66            644            598           4356
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -149,12 +149,13 @@ nvim
 │           └── zellij_nav.lua
 ├── README.md
 ├── snippets
-│   └── python.json
+│   ├── python.json
+│   └── sh.json
 └── spell
     ├── en.utf-8.add
     └── en.utf-8.add.spl
 
-15 directories, 66 files
+15 directories, 67 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
 

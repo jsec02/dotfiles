@@ -1,0 +1,6 @@
+{
+  "Debug": {
+    "prefix": "debug",
+    "body": ["PS4='\\$LINENO + '", "set -x"]
+  }
+}

@@ -12,10 +12,10 @@ Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             60            610            594           3953
 Markdown                         3             42              8            266
-JSON                             2              0              0            245
+JSON                             3              0              0            251
 TOML                             5             10              0            209
 -------------------------------------------------------------------------------
-SUM:                            70            662            602           4673
+SUM:                            71            662            602           4679
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -110,7 +110,8 @@ dotfiles
 │   │           └── zellij_nav.lua
 │   ├── README.md
 │   ├── snippets
-│   │   └── python.json
+│   │   ├── python.json
+│   │   └── sh.json
 │   └── spell
 │       ├── en.utf-8.add
 │       └── en.utf-8.add.spl
@@ -124,6 +125,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-24 directories, 74 files
+24 directories, 75 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
