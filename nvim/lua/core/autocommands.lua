@@ -33,29 +33,13 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
     end,
 })
 
--- Save view when leaving buffer or writing (cursor position, folds, etc.)
-autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
+-- Restore cursor position upon entering buffer
+autocmd("BufReadPost", {
     group = "editor_behavior",
-    callback = function(args)
-        if vim.b[args.buf].view_activated then
-            vim.cmd.mkview({ mods = { emsg_silent = true } })
-        end
-    end,
-})
-
--- Restore view when entering buffer
-autocmd("BufWinEnter", {
-    group = "editor_behavior",
-    callback = function(args)
-        if not vim.b[args.buf].view_activated then
-            local buftype = vim.bo[args.buf].buftype
-            local filetype = vim.bo[args.buf].filetype
-            local ignore_filetypes = { "gitcommit", "gitrebase", "svg", "hgcommit" }
-
-            if buftype == "" and filetype ~= "" and not vim.tbl_contains(ignore_filetypes, filetype) then
-                vim.b[args.buf].view_activated = true
-                vim.cmd.loadview({ mods = { emsg_silent = true } })
-            end
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
+            vim.api.nvim_win_set_cursor(0, mark)
         end
     end,
 })
