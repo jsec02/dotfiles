@@ -1,0 +1,79 @@
+# Colorscheme
+colorscheme palenight
+
+# Transpartent background
+set-face global Default default,default
+set-face global MenuBackground default,default
+set-face global BufferPadding default,default
+
+# set-option global completion_trigger_length 2
+
+# Line numbers
+add-highlighter global/ number-lines -relative -separator " ▎ "
+
+# Matching delimiters
+add-highlighter global/ show-matching
+
+# Indentation
+set-option global tabstop 4
+set-option global indentwidth 4
+
+# Remove clippy
+set-option global ui_options terminal_assistant=none terminal_enable_mouse=false
+
+# Disable mouse
+set-option -add global ui_options terminal_enable_mouse=false
+
+# Hide "~" eof character
+# set-face global BufferPadding rgb:000000,default
+
+# Disable mouse
+set-option -add global ui_options terminal_enable_mouse=false
+
+# Enable line wrapping for markdown
+hook global WinSetOption filetype=markdown %{
+    add-highlighter window/ wrap
+}
+
+# Scrolloff
+set-option global scrolloff 10,10
+
+# Vim-like scrolling
+map global normal <c-d> ': execute-keys 10j<ret>'
+map global normal <c-u> ': execute-keys 10k<ret>'
+
+# Esc to deselect
+map global normal <esc> ';,'
+
+# Control completion menu with arrow keys
+hook global InsertCompletionShow .* %{
+    map window insert <up>   <c-p>
+    map window insert <down> <c-n>
+}
+hook global InsertCompletionHide .* %{
+    unmap window insert <up>   <c-p>
+    unmap window insert <down> <c-n>
+}
+
+# LSP
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=python %{
+    lsp-enable-window
+    map window user h ': lsp-hover<ret>' -docstring 'lsp hover'
+}
+
+
+define-command fzf-files %{
+    nop %sh{
+        zellij run --floating --close-on-exit --name files --width 80% --height 80% --x 10% --y 10% -- sh -c "sk --layout=reverse --preview 'cat {}' | xargs -I{} sh -c 'echo \"eval -client $kak_client edit {}\" | kak -p $kak_session'"
+    }
+}
+
+map global user f ': fzf-files<ret>' -docstring 'file picker'
+
+define-command fzf-grep %{
+    nop %sh{
+        zellij run --floating --close-on-exit --name grep --width 80% --height 80% --x 10% --y 10% -- sh -c "sk --ansi -i -c 'rg --color=always --line-number \"{}\"' | cut -d: -f1,2 | xargs -I{} sh -c 'echo \"eval -client $kak_client edit {}\" | kak -p $kak_session'"
+    }
+}
+map global user g ': fzf-grep<ret>' -docstring 'grep picker'
