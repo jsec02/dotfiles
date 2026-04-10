@@ -21,7 +21,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 export PATH="$HOME/python/scripts:$PATH"
 export PATH="$HOME/bash/scripts:$PATH"
-export PATH="$HOME/bash/backup/scripts:$PATH"
+export PATH="$HOME/bash/backup:$PATH"
 
 # Python
 export PYTHONBREAKPOINT=ipdb.set_trace
