@@ -59,7 +59,7 @@ return {
                 shfmt = {
                     args = {
                         "--indent",
-                        "2",
+                        "4",
                         "--case-indent",
                         "--binary-next-line",
                         "-",
