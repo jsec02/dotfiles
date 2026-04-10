@@ -22,6 +22,7 @@ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 export PATH="$HOME/python/scripts:$PATH"
 export PATH="$HOME/bash/scripts:$PATH"
 export PATH="$HOME/bash/backup:$PATH"
+export PATH="$PATH:/mnt/c/Windows/System32"
 
 # Python
 export PYTHONBREAKPOINT=ipdb.set_trace
