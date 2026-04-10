@@ -6,7 +6,7 @@ return {
     "saghen/blink.cmp",
     -- enabled = false,
     event = { "InsertEnter", "CmdlineEnter" },
-    version = "1.*",
+    version = "1.10.0", -- 1.10.2 mangles menu alignment
     dependencies = {
         "rafamadriz/friendly-snippets",
         "folke/lazydev.nvim",
