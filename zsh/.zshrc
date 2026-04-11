@@ -190,10 +190,6 @@ setopt HIST_IGNORE_SPACE # Prefix commands with space to exclude from history
 
 # =================================== PLUGINS ====================================
 
-# zsh-autopair
-# git clone https://github.com/hlissner/zsh-autopair ~/.zsh/zsh-autopair
-source ~/.zsh/zsh-autopair/autopair.zsh
-
 # zsh-autosuggestions
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
