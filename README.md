@@ -11,11 +11,11 @@ Personal dotfiles and configuration management for my linux machines
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             59            608            589           3931
-Markdown                         3             42              8            268
 JSON                             3              0              0            250
 TOML                             5             10              0            209
+Markdown                         2              9              4            140
 -------------------------------------------------------------------------------
-SUM:                            70            660            597           4658
+SUM:                            69            627            593           4530
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -39,7 +39,6 @@ dotfiles
 |   `-- kakrc
 |-- nvim
 |   |-- COMMANDS.md
-|   |-- README.md
 |   |-- after
 |   |   `-- ftplugin
 |   |       |-- css.lua
@@ -127,6 +126,6 @@ dotfiles
 |       `-- astrodark.kdl
 `-- zsh
 
-26 directories, 75 files
+26 directories, 74 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
