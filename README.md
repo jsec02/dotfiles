@@ -10,12 +10,12 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             59            608            589           3931
+Lua                             58            607            586           3923
 TOML                             6             44             32            316
 JSON                             3              0              0            250
-Markdown                         2              9              4            140
+Markdown                         2              9              4            143
 -------------------------------------------------------------------------------
-SUM:                            70            661            625           4637
+SUM:                            69            660            622           4632
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -98,7 +98,6 @@ dotfiles
 |   |       |   |-- heirline.lua
 |   |       |   |-- illuminate.lua
 |   |       |   |-- mini_icons.lua
-|   |       |   |-- nvim_highlight_colors.lua
 |   |       |   |-- nvim_ufo.lua
 |   |       |   `-- rainbow_delimiters.lua
 |   |       `-- utils
@@ -129,6 +128,6 @@ dotfiles
 |       `-- astrodark.kdl
 `-- zsh
 
-27 directories, 76 files
+27 directories, 75 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
