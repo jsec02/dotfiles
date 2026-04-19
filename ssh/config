@@ -10,11 +10,6 @@ Host pi
     IdentityFile ~/.ssh/id_ed25519
 
 Host kali
-    HostName 10.0.0.190
-    User master
-    IdentityFile ~/.ssh/id_ed25519
-
-Host rhel
-    HostName 10.0.0.151
+    HostName 10.0.0.217
     User master
     IdentityFile ~/.ssh/id_ed25519
