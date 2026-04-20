@@ -7,6 +7,9 @@ setopt correct # Suggest corrections for mistyped commands
 
 [[ $- != *i* ]] && return # If not running interactively, don't do anything
 
+# If on x11, decrease key repeat delay and increase key repeat speed respectively
+[[ "$XDG_SESSION_TYPE" == "x11" ]] && xset r rate 250 30
+
 PROMPT_EOL_MARK="" # Hide EOL sign ('%')
 
 precmd() {
