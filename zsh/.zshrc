@@ -90,8 +90,8 @@ alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git pus
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
 # VPN
-alias vpnon='sudo wg-quick up "$HOSTNAME"'
-alias vpnoff='sudo wg-quick down "$HOSTNAME"'
+alias vpnon="sudo wg-quick up $HOSTNAME"
+alias vpnoff="sudo wg-quick down $HOSTNAME"
 
 # Vault
 alias documentation='cd ~/vault/documentation/'
