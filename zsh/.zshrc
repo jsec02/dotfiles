@@ -89,10 +89,6 @@ alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git pus
 # VirtualBox
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
-# VPN
-alias vpnon="sudo wg-quick up $HOST"
-alias vpnoff="sudo wg-quick down $HOST"
-
 # Vault
 alias documentation='cd ~/vault/documentation/'
 alias educational='cd ~/vault/educational/'
@@ -115,6 +111,19 @@ projects() {
   echo "Available projects:"
   alias | grep "cd ~" | sed "s/alias /  /" | sed "s/='cd /  -> /" | sed "s/'$//" | sort
 }
+
+# ===================================== VPN ======================================
+
+vpnon() {
+  local conf=$(sudo ls /etc/wireguard 2>/dev/null | xargs basename --suffix=.conf)
+  sudo wg-quick up $conf
+}
+
+vpnoff() {
+  local conf=$(sudo ls /etc/wireguard 2>/dev/null | xargs basename --suffix=.conf)
+  sudo wg-quick down $conf
+}
+
 
 # ================================== MAN PAGES ===================================
 
