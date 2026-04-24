@@ -9,11 +9,12 @@ umask 022
 typeset -U PATH path
 
 # Load secrets
-[ -f ~/.zshenv.local ] && source ~/.zshenv.local
+[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
 
 # General
-export EDITOR=nvim
-export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe" # Use windows browser
+if command -v nvim &>/dev/null; then
+    export EDITOR=nvim
+fi
 
 # Path
 export PATH="$HOME/.local/bin:$PATH"

@@ -2,23 +2,32 @@
 # =                                    .ZSHRC                                    =
 # ================================================================================
 
-setopt autocd # cd into dirs without typing cd
-setopt correct # Suggest corrections for mistyped commands
+[[ $- != *i* ]] && return # Exit early if not running interactively
 
-[[ $- != *i* ]] && return # If not running interactively, don't do anything
+# cd into dirs without typing cd
+setopt autocd
+
+# Suggest corrections for mistyped commands
+setopt correct
+
+# Stop zsh from stripping trailing slashes
+setopt NO_AUTO_REMOVE_SLASH
 
 # If on x11, decrease key repeat delay and increase key repeat speed respectively
 [[ "$XDG_SESSION_TYPE" == "x11" ]] && xset r rate 250 30
 
-PROMPT_EOL_MARK="" # Hide EOL sign ('%')
+# Hide EOL sign ('%')
+PROMPT_EOL_MARK=""
 
+# Set terminal title with zsh hook
 precmd() {
-    print -Pn "\e]0;%n@%m:%~\a" # Terminal title
+    print -Pn "\e]0;%n@%m:%~\a"
 }
 
 # ==================================== PROMPT ====================================
 
-VIRTUAL_ENV_DISABLE_PROMPT=1 # Disable default venv display
+# Disable default venv display
+VIRTUAL_ENV_DISABLE_PROMPT=1
 
 setopt prompt_subst
 PROMPT='%F{white}╭─%f${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }%B%F{green}%n@%m%f%b %B%F{12}%~%f%b
@@ -48,14 +57,13 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # ==================================== DIRENV ====================================
 
 if command -v direnv &>/dev/null; then
-    eval "$(direnv hook zsh)"
+    eval "$(direnv hook zsh)" # Hook direnv into precmd to auto-load .envrc files
 fi
 
 # ==================================== ZELLIJ ====================================
 
-# Start zellij automatically
 if command -v zellij &>/dev/null; then
-    eval "$(zellij setup --generate-auto-start zsh)"
+    eval "$(zellij setup --generate-auto-start zsh)" # Start zellij automatically
 fi
 
 # =================================== ALIASES ====================================
@@ -65,9 +73,9 @@ alias grep='grep --color=auto'
 alias weather='curl wttr.in'
 
 # ls
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    export LS_COLORS="$LS_COLORS:ow=30;44:"
+if command -v dircolors &>/dev/null; then
+    eval "$(dircolors --bourne-shell)"
+    export LS_COLORS="$LS_COLORS:ow=30;44:" # Change world-writable dir colors
     alias ls='ls --color=auto'
 fi
 
@@ -90,100 +98,45 @@ alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git pus
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
 # Vault
-alias documentation='cd ~/vault/documentation/'
-alias educational='cd ~/vault/educational/'
-alias personal='cd ~/vault/personal/'
-alias professional='cd ~/vault/professional/'
+alias documentation='cd $HOME/vault/documentation'
+alias educational='cd $HOME/vault/educational'
+alias personal='cd $HOME/vault/personal'
+alias professional='cd $HOME/vault/professional'
 
 # Projects
-alias alien_invasion='cd ~/python/projects/alien_invasion'
-alias data_visualization='cd ~/python/projects/data_visualization'
-alias dotfiles='cd ~/dotfiles'
-alias neovim='cd ~/.config/nvim'
-alias fish_tank='cd ~/python/projects/fish_tank'
-alias riven_sniper='cd ~/python/projects/riven_sniper'
-alias wfm='cd ~/python/projects/wfm'
-alias port_scanner='cd ~/python/projects/port_scanner'
-alias pping='cd ~/python/projects/ping'
-
-# Show project aliases
-projects() {
-  echo "Available projects:"
-  alias | grep "cd ~" | sed "s/alias /  /" | sed "s/='cd /  -> /" | sed "s/'$//" | sort
-}
+alias alien_invasion='cd $HOME/python/projects/alien_invasion'
+alias data_visualization='cd $HOME/python/projects/data_visualization'
+alias dotfiles='cd $HOME/dotfiles'
+alias neovim='cd $HOME/.config/nvim'
+alias fish_tank='cd $HOME/python/projects/fish_tank'
+alias riven_sniper='cd $HOME/python/projects/riven_sniper'
+alias wfm='cd $HOME/python/projects/wfm'
+alias port_scanner='cd $HOME/python/projects/port_scanner'
+alias pping='cd $HOME/python/projects/ping'
 
 # ===================================== VPN ======================================
 
-vpnon() {
-  local conf=$(sudo ls /etc/wireguard 2>/dev/null | xargs basename --suffix=.conf)
-  sudo wg-quick up $conf
-}
+# Assumes single .conf in /etc/wireguard/ and uses its name for wg-quick
+if command -v wg-quick &>/dev/null; then
+    vpnon() {
+        local conf=$(sudo ls /etc/wireguard/ 2>/dev/null | xargs basename --suffix=.conf)
+        sudo wg-quick up $conf
+    }
 
-vpnoff() {
-  local conf=$(sudo ls /etc/wireguard 2>/dev/null | xargs basename --suffix=.conf)
-  sudo wg-quick down $conf
-}
+    vpnoff() {
+        local conf=$(sudo ls /etc/wireguard/ 2>/dev/null | xargs basename --suffix=.conf)
+        sudo wg-quick down $conf
+    }
+fi
 
+# ===================================== MAN ======================================
 
-# ================================== MAN PAGES ===================================
+if command -v nvim &>/dev/null; then
+    export MANPAGER='nvim +Man!' # Use nvim as manpager
 
-export MANPAGER='nvim +Man!'
-man() {
-    MANWIDTH=$(( COLUMNS - 3 )) command man "$@" # Fix manpage centering in nvim
-}
-
-# =================================== VI MODE ====================================
-
-bindkey -v
-
-KEYTIMEOUT=1 # Reduce escape key delay for mode switching
-
-# Fix backspace not working after switching modes
-bindkey -M viins '^?' backward-delete-char
-bindkey -M viins '^H' backward-delete-char
-
-# History keymaps
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd '?' history-incremental-search-forward
-
-# Cursor shape based on mode
-function zle-keymap-select {
-  if [[ $KEYMAP == vicmd ]]; then
-    echo -ne '\e[1 q' # block cursor (normal mode)
-  else
-    echo -ne '\e[5 q' # beam cursor (insert mode)
-  fi
-}
-
-zle-line-init() {
-    zle -K viins  # insert mode
-    echo -ne '\e[5 q' # beam cursor
-}
-
-zle -N zle-keymap-select
-zle -N zle-line-init
-
-# Clipboard integration
-if command -v wl-copy &>/dev/null; then
-    function _clip_copy() { wl-copy }
-
-    function _vi-yank-clip()            { zle vi-yank;           echo -n "$CUTBUFFER" | _clip_copy }
-    function _vi-yank-eol-clip()        { zle vi-yank-eol;       echo -n "$CUTBUFFER" | _clip_copy }
-    function _vi-yank-whole-line-clip() { zle vi-yank-whole-line; echo -n "$CUTBUFFER" | _clip_copy }
-    function _vi-delete-clip()          { zle vi-delete;         echo -n "$CUTBUFFER" | _clip_copy }
-    function _vi-change-clip()          { zle vi-change;         echo -n "$CUTBUFFER" | _clip_copy }
-
-    zle -N _vi-yank-clip
-    zle -N _vi-yank-eol-clip
-    zle -N _vi-yank-whole-line-clip
-    zle -N _vi-delete-clip
-    zle -N _vi-change-clip
-
-    bindkey -M vicmd 'y'  _vi-yank-clip
-    bindkey -M vicmd 'Y'  _vi-yank-eol-clip
-    bindkey -M vicmd 'yy' _vi-yank-whole-line-clip
-    bindkey -M vicmd 'd'  _vi-delete-clip
-    bindkey -M vicmd 'c'  _vi-change-clip
+    man() {
+        MANWIDTH=$(( COLUMNS - 3 )) command man "$@" # Fix manpage centering in nvim
+    }
 fi
 
 # =================================== HISTORY ====================================
@@ -199,49 +152,83 @@ export SAVEHIST=100000
 setopt HIST_IGNORE_DUPS # Don't record duplicate commands
 setopt HIST_IGNORE_SPACE # Don't record commands starting with space
 setopt SHARE_HISTORY # Share history across all sessions
-setopt HIST_IGNORE_SPACE # Prefix commands with space to exclude from history
-
-# =================================== PLUGINS ====================================
-
-# zsh-autosuggestions
-if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-elif [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
 
 # ================================ ABBREVIATIONS =================================
 
 typeset -Ag abbreviations
+
 abbreviations=(
-  "feat"     'git commit -m "feat:'
-  "fix"      'git commit -m "fix:'
-  "docs"     'git commit -m "docs:'
-  "style"    'git commit -m "style:'
-  "refactor" 'git commit -m "refactor:'
-  "test"     'git commit -m "test:'
-  "chore"    'git commit -m "chore:'
+    [feat]='git commit -m "feat:'
+    [fix]='git commit -m "fix:'
+    [docs]='git commit -m "docs:'
+    [style]='git commit -m "style:'
+    [refactor]='git commit -m "refactor:'
+    [test]='git commit -m "test:'
+    [chore]='git commit -m "chore:'
 )
 
 magic-abbrev-expand() {
-  local word=${LBUFFER##* }
-  local expansion=${abbreviations[$word]}
+    local word=${LBUFFER##* }
+    local expansion=${abbreviations[$word]}
 
-  if [[ -n $expansion ]]; then
-    LBUFFER=${LBUFFER%$word}$expansion
-    RBUFFER='"'$RBUFFER  # Add closing quote to right buffer
-  fi
+    if [[ -n $expansion ]]; then
+        LBUFFER=${LBUFFER%$word}$expansion # Strip word from end, append expansion
+        RBUFFER='"'$RBUFFER  # Add closing quote to right buffer
+    fi
 
-  zle self-insert
+    zle self-insert
 }
 
 no-magic-abbrev-expand() {
   LBUFFER+=' '
 }
 
+# Register functions to zle widgets
 zle -N magic-abbrev-expand
 zle -N no-magic-abbrev-expand
+
 bindkey " " magic-abbrev-expand
 bindkey "^ " no-magic-abbrev-expand
+
+# ================================================================================
+# =                                    ZINIT                                     =
+# ================================================================================
+
+# If zinit is missing, install it
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+# Load zinit
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# ============================= ZSH-AUTOSUGGESTIONS ==============================
+
+zinit light zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+
+# ================================= ZSH-VI-MODE ==================================
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
+# If TERM is vte-256color, override cursor shape since it blocks zsh-vi-mode's sequences
+# TERM may be set to vte-256color to make undercurls work in zellij
+if [[ "$TERM" == "vte-256color" ]]; then
+    zvm_after_select_vi_mode() {
+      case $ZVM_MODE in
+        $ZVM_MODE_NORMAL)
+          echo -ne '\e[1 q' # block cursor
+        ;;
+        $ZVM_MODE_INSERT)
+          echo -ne '\e[5 q' # beam cursor
+        ;;
+      esac
+    }
+fi
