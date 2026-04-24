@@ -278,6 +278,12 @@ keybinds clear-defaults=true {
 }
 
 env {
+    // https://github.com/zellij-org/zellij/issues/2348
+    // https://github.com/zellij-org/zellij/issues/1594
+    // https://github.com/zellij-org/zellij/issues/3262
+    // https://github.com/zellij-org/zellij/issues/3866
+    // https://github.com/zellij-org/zellij/issues/3336
+    // https://github.com/microsoft/terminal/issues/18312
     TERM "vte-256color" // Make undercurls work in nvim
 }
 
