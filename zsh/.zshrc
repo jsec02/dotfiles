@@ -4,6 +4,9 @@
 
 [[ $- != *i* ]] && return # Exit early if not running interactively
 
+# Set default umask
+umask 022
+
 # cd into dirs without typing cd
 setopt autocd
 
