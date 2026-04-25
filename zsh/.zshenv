@@ -2,14 +2,14 @@
 # =                                   .ZSHENV                                    =
 # ================================================================================
 
+# Load secrets
+[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
+
 # Set default umask
 umask 022
 
 # Only add to PATH if not already present
 typeset -U PATH path
-
-# Load secrets
-[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
 
 # General
 if command -v nvim &>/dev/null; then
