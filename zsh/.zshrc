@@ -16,6 +16,9 @@ setopt correct
 # Stop zsh from stripping trailing slashes
 setopt NO_AUTO_REMOVE_SLASH
 
+# Free up ctrl+s for incremental search
+stty -ixon
+
 # If on x11, decrease key repeat delay and increase key repeat speed respectively
 [[ "$XDG_SESSION_TYPE" == "x11" ]] && xset r rate 250 30
 
