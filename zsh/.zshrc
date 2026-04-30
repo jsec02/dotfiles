@@ -4,7 +4,7 @@
 
 [[ $- != *i* ]] && return # Exit early if not running interactively
 
-# Set default umask
+# Set default mask
 umask 022
 
 # cd into dirs without typing cd
@@ -68,7 +68,7 @@ fi
 
 # ==================================== ZELLIJ ====================================
 
-if command -v zellij &>/dev/null; then
+if command -v zellij &>/dev/null && [[ -z $SSH_CLIENT ]]; then
     eval "$(zellij setup --generate-auto-start zsh)" # Start zellij automatically
 fi
 
