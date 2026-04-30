@@ -1,15 +1,20 @@
 Host windows
-    HostName 10.0.0.50
+    HostName 10.0.0.100
     User master
     IdentityFile ~/.ssh/id_ed25519
     KexAlgorithms curve25519-sha256
 
+Host wsl
+    HostName 10.0.0.110
+    User master
+    IdentityFile ~/.ssh/id_ed25519
+
 Host pi
-    HostName 10.0.0.60
+    HostName 10.0.0.120
     User master
     IdentityFile ~/.ssh/id_ed25519
 
 Host kali
-    HostName 10.0.0.70
+    HostName 10.0.0.130
     User master
     IdentityFile ~/.ssh/id_ed25519
