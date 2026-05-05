@@ -111,6 +111,7 @@ alias documentation='cd $HOME/vault/documentation'
 alias educational='cd $HOME/vault/educational'
 alias personal='cd $HOME/vault/personal'
 alias professional='cd $HOME/vault/professional'
+alias pentesting='cd $HOME/vault/pentesting'
 
 # ===================================== VPN ======================================
 
