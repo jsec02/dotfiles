@@ -205,6 +205,9 @@ zle -N no-magic-abbrev-expand
 bindkey " " magic-abbrev-expand
 bindkey "^ " no-magic-abbrev-expand
 
+# Allow spaces in incremental search
+bindkey -M isearch " " self-insert
+
 # ================================================================================
 # =                                    ZINIT                                     =
 # ================================================================================
