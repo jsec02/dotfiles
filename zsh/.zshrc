@@ -70,6 +70,7 @@ fi
 
 if command -v fzf &>/dev/null; then
     zvm_after_init_commands+=('source <(fzf --zsh)')
+    source "$HOME/.config/fzf/themes/astrodark.sh"
 fi
 
 # ==================================== ZELLIJ ====================================
