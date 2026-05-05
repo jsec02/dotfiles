@@ -154,15 +154,17 @@ setopt SHARE_HISTORY # Share history across all sessions
 
 gitpush() {
     local dir="$1"
-    local msg="$2"
+    local files="$2"
+    local msg="$3"
 
-    (cd "$dir" && git add . && git commit -m "$msg" && git push)
+    (cd "$dir" && git add "$files" && git commit -m "$msg" && git push)
 }
 
 if [[ $HOST == "wsl" ]]; then
-    giteducational() { gitpush "$HOME/vault/educational" "update $(date +%Y-%m-%d)"; }
-    gitpentesting() { gitpush "$HOME/vault/pentesting" "update $(date +%Y-%m-%d)"; }
-    gitspellfile() { gitpush "$HOME/.config/nvim/spell" "chore: update spellfiles"; }
+    giteducational() { gitpush "$HOME/vault/educational" "." "update $(date +%Y-%m-%d)"; }
+    gitpentesting() { gitpush "$HOME/vault/pentesting" "." "update $(date +%Y-%m-%d)"; }
+    gitspellfiles() { gitpush "$HOME/.config/nvim" "spell" "chore: update spellfiles"; }
+    gitplugins() { gitpush "$HOME/.config/nvim" "lazy-lock.json" "chore: update plugins"; }
 fi
 
 # ================================ ABBREVIATIONS =================================
