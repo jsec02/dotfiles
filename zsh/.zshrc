@@ -104,7 +104,12 @@ alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
 # Backup
-[[ $HOST == "wsl" ]] && alias backupall='backup && ssh pi backup && ssh kali backup'
+if [[ $HOST == "wsl" ]]; then
+    alias backupall=\
+        'backup \
+        && ssh pi "cd $HOME/bash/backup && git pull origin master && backup" \
+        && ssh kali "cd $HOME/bash/backup && git pull origin master && backup"'
+fi
 
 # VirtualBox
 [[ -e "/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" ]] \
