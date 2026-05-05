@@ -40,7 +40,6 @@ opt.fillchars:append({ eob = " " }) -- Hide "~" at EOF
 
 -- =================================== BEHAVIOR ===================================
 
-opt.clipboard = "unnamedplus" -- Use system clipboard
 opt.whichwrap = "<,>,[,]" -- Allow arrows to wrap across lines
 opt.swapfile = false -- Disable swap files
 opt.undofile = true -- Enable persistent undo
@@ -110,3 +109,29 @@ g.loaded_matchparen = 1
 
 opt.modeline = false -- Disable modelines to prevent arbitrary code execution
 opt.exrc = false -- Don't auto-load project .vimrc/.nvimrc files
+
+-- ================================== CLIPBOARD ===================================
+
+-- https://github.com/neovim/neovim/issues/28611#issuecomment-2147744670
+local function no_paste()
+    return function(lines)
+        local content = vim.fn.getreg('"')
+        return vim.split(content, "\n")
+    end
+end
+
+if os.getenv("SSH_TTY") ~= nil then
+    vim.g.clipboard = {
+        name = "OSC 52",
+        copy = {
+            ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+            ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+        },
+        paste = {
+            ["+"] = no_paste(),
+            ["*"] = no_paste(),
+        },
+    }
+end
+
+opt.clipboard = "unnamedplus"
