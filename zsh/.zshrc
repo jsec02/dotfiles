@@ -100,6 +100,9 @@ alias mvim='NVIM_APPNAME=nvim.mini nvim'
 # git
 alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git push'
 
+# Backup
+[[ $HOST == "wsl" ]] && alias backup_all='backup && ssh pi backup && ssh kali backup'
+
 # VirtualBox
 alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
