@@ -112,17 +112,6 @@ alias educational='cd $HOME/vault/educational'
 alias personal='cd $HOME/vault/personal'
 alias professional='cd $HOME/vault/professional'
 
-# Projects
-alias alien_invasion='cd $HOME/python/projects/alien_invasion'
-alias data_visualization='cd $HOME/python/projects/data_visualization'
-alias dotfiles='cd $HOME/dotfiles'
-alias neovim='cd $HOME/.config/nvim'
-alias fish_tank='cd $HOME/python/projects/fish_tank'
-alias riven_sniper='cd $HOME/python/projects/riven_sniper'
-alias wfm='cd $HOME/python/projects/wfm'
-alias port_scanner='cd $HOME/python/projects/port_scanner'
-alias pping='cd $HOME/python/projects/ping'
-
 # ===================================== VPN ======================================
 
 # Assumes single .conf in /etc/wireguard/ and uses its name for wg-quick
