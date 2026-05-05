@@ -103,14 +103,6 @@ alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
-# Backup
-if [[ $HOST == "wsl" ]]; then
-    alias backupall=\
-        'backup \
-        && ssh pi "cd $HOME/bash/backup && git pull origin master && backup" \
-        && ssh kali "cd $HOME/bash/backup && git pull origin master && backup"'
-fi
-
 # VirtualBox
 [[ -e "/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" ]] \
     && alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
@@ -121,6 +113,16 @@ alias educational='cd $HOME/vault/educational'
 alias personal='cd $HOME/vault/personal'
 alias professional='cd $HOME/vault/professional'
 alias pentesting='cd $HOME/vault/pentesting'
+
+# ==================================== BACKUP ====================================
+
+if [[ $HOST == "wsl" ]]; then
+    backupall() {
+        backup \
+        && ssh pi "cd $HOME/bash/backup && git pull origin master && backup" \
+        && ssh kali "cd $HOME/bash/backup && git pull origin master && backup"
+    }
+fi
 
 # ===================================== VPN ======================================
 
