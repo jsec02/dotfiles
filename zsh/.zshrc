@@ -66,6 +66,12 @@ if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)" # Hook direnv into precmd to auto-load .envrc files
 fi
 
+# ===================================== FZF ======================================
+
+if command -v fzf &>/dev/null; then
+    zvm_after_init_commands+=('source <(fzf --zsh)')
+fi
+
 # ==================================== ZELLIJ ====================================
 
 if command -v zellij &>/dev/null && [[ -z $SSH_CLIENT ]]; then
