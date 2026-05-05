@@ -161,7 +161,7 @@ export HISTSIZE=9223372036854775807
 export SAVEHIST=9223372036854775807
 
 # Zsh history options
-setopt HIST_IGNORE_DUPS # Don't record duplicate commands
+setopt HIST_IGNORE_DUPS # Don't record consecutive duplicate commands
 setopt HIST_IGNORE_SPACE # Don't record commands starting with space
 setopt SHARE_HISTORY # Share history across all sessions
 
