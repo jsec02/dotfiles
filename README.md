@@ -14,8 +14,9 @@ Lua                             58            607            586           3923
 TOML                             6             44             32            316
 JSON                             3              0              0            249
 Markdown                         2              9              4            142
+Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            69            660            622           4630
+SUM:                            70            660            622           4652
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -28,6 +29,9 @@ SUM:                            69            660            622           4630
 dotfiles
 ├── direnv
 │   └── direnv.toml
+├── fzf
+│   └── themes
+│       └── astrodark.sh
 ├── git
 ├── helix
 │   ├── config.toml
@@ -128,6 +132,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-27 directories, 75 files
+29 directories, 76 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
