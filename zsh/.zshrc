@@ -97,9 +97,6 @@ alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
-# git
-alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git push'
-
 # Backup
 [[ $HOST == "wsl" ]] && alias backupall='backup && ssh pi backup && ssh kali backup'
 
