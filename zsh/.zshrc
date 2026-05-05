@@ -101,10 +101,11 @@ alias mvim='NVIM_APPNAME=nvim.mini nvim'
 alias gitvault='git add . && git commit -m "update $(date +%Y-%m-%d)" && git push'
 
 # Backup
-[[ $HOST == "wsl" ]] && alias backup_all='backup && ssh pi backup && ssh kali backup'
+[[ $HOST == "wsl" ]] && alias backupall='backup && ssh pi backup && ssh kali backup'
 
 # VirtualBox
-alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
+[[ -e "/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" ]] \
+    && alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
 
 # Vault
 alias documentation='cd $HOME/vault/documentation'
@@ -151,6 +152,21 @@ export SAVEHIST=100000
 setopt HIST_IGNORE_DUPS # Don't record duplicate commands
 setopt HIST_IGNORE_SPACE # Don't record commands starting with space
 setopt SHARE_HISTORY # Share history across all sessions
+
+# ===================================== GIT ======================================
+
+gitpush() {
+    local dir="$1"
+    local msg="$2"
+
+    (cd "$dir" && git add . && git commit -m "$msg" && git push)
+}
+
+if [[ $HOST == "wsl" ]]; then
+    giteducational() { gitpush "$HOME/vault/educational" "update $(date +%Y-%m-%d)"; }
+    gitpentesting() { gitpush "$HOME/vault/pentesting" "update $(date +%Y-%m-%d)"; }
+    gitspellfile() { gitpush "$HOME/.config/nvim/spell" "chore: update spellfiles"; }
+fi
 
 # ================================ ABBREVIATIONS =================================
 
