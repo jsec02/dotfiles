@@ -141,9 +141,10 @@ fi
 # History file location
 export HISTFILE=~/.zsh_history
 
-# Increase history size
-export HISTSIZE=100000
-export SAVEHIST=100000
+# Unlimited history size
+# https://github.com/zsh-users/zsh/blob/3d7215cc8277b39cd1e24ce5a04376d45bfbabf0/Src/zsh.h#L46
+export HISTSIZE=9223372036854775807
+export SAVEHIST=9223372036854775807
 
 # Zsh history options
 setopt HIST_IGNORE_DUPS # Don't record duplicate commands
