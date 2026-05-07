@@ -73,12 +73,6 @@ if command -v fzf &>/dev/null; then
     source "$HOME/.config/fzf/themes/astrodark.sh"
 fi
 
-# ==================================== ZELLIJ ====================================
-
-if command -v zellij &>/dev/null && [[ -z $SSH_CLIENT ]]; then
-    eval "$(zellij setup --generate-auto-start zsh)" # Start zellij automatically
-fi
-
 # =================================== ALIASES ====================================
 
 # General
