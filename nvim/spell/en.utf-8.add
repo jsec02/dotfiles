@@ -209,3 +209,12 @@ setuid
 dac
 Obins
 GTF
+metasploit
+Nops
+msfconsole
+msfvenom
+Nop
+searchsploit
+cwd
+shellshock
+Referer
