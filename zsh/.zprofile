@@ -13,6 +13,3 @@ export PATH="$HOME/python/scripts:$PATH"
 export PATH="$HOME/bash/scripts:$PATH"
 export PATH="$HOME/bash/backup:$PATH"
 export PATH="$PATH:/mnt/c/Windows/System32"
-
-# Atuin
-export ATUIN_CONFIG_DIR=/home/master/dotfiles/atuin
