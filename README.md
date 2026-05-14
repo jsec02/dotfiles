@@ -11,12 +11,12 @@ Personal dotfiles and configuration management for my linux machines
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             58            611            588           3942
-TOML                             6             44             32            316
+TOML                             7            109            323            331
 JSON                             3              0              0            249
 Markdown                         2              9              4            146
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            70            664            624           4675
+SUM:                            71            729            915           4690
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -27,6 +27,8 @@ SUM:                            70            664            624           4675
 
 ```
 dotfiles
+├── atuin
+│   └── config.toml
 ├── direnv
 │   └── direnv.toml
 ├── fzf
@@ -132,6 +134,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-29 directories, 76 files
+30 directories, 77 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
