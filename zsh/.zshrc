@@ -144,16 +144,20 @@ if command -v nvim &>/dev/null; then
     }
 fi
 
-# ================================ HISTORY/ATUIN =================================
+# =================================== HISTORY ====================================
 
-# Initialize atuin
-if command -v atuin &>/dev/null; then
-    zvm_after_init_commands+=('eval "$(atuin init zsh)"')
-fi
+# History file location
+export HISTFILE=~/.zsh_history
+
+# Unlimited history size
+# https://github.com/zsh-users/zsh/blob/3d7215cc8277b39cd1e24ce5a04376d45bfbabf0/Src/zsh.h#L46
+export HISTSIZE=9223372036854775807
+export SAVEHIST=9223372036854775807
 
 # Zsh history options
 setopt HIST_IGNORE_DUPS # Don't record consecutive duplicate commands
 setopt HIST_IGNORE_SPACE # Don't record commands starting with space
+setopt SHARE_HISTORY # Share history across all sessions
 
 # ===================================== GIT ======================================
 
