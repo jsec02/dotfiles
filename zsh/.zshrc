@@ -147,7 +147,7 @@ fi
 # ================================ HISTORY/ATUIN =================================
 
 # Initialize atuin
-zvm_after_init_commands+=('eval "$(atuin init zsh --disable-up-arrow)"')
+zvm_after_init_commands+=('eval "$(atuin init zsh)"')
 
 # Zsh history options
 setopt HIST_IGNORE_DUPS # Don't record consecutive duplicate commands
