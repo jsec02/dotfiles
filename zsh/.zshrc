@@ -88,6 +88,7 @@ fi
 
 # History
 alias history="history 0"
+alias hl='wc --lines $HOME/.zsh_history'
 
 # Auto suggestions
 alias suggestoff='ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=0'
