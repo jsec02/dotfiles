@@ -223,3 +223,12 @@ cmdlet
 IWR
 certutil
 pentesting
+smbserver
+nslookup
+CNAM
+SOA
+dnsrecon
+Loopback
+wpscan
+phpass
+smbclient
