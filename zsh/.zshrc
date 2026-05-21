@@ -80,6 +80,8 @@ alias grep='grep --color=auto'
 alias weather='curl wttr.in'
 
 # ls
+alias ll='ls -lah --group-directories-first'
+
 if command -v dircolors &>/dev/null; then
     eval "$(dircolors --bourne-shell)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # Change world-writable dir colors
