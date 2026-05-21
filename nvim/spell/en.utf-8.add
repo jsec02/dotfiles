@@ -232,3 +232,8 @@ Loopback
 wpscan
 phpass
 smbclient
+apache
+cgi
+rce
+cve
+HTB
