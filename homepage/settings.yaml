@@ -1,0 +1,35 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/settings/
+
+target: _self
+
+headerStyle: clean
+
+layout:
+  - Cybersecurity:
+      tab: Bookmarks
+  - Github:
+      tab: Bookmarks
+  - Social:
+      tab: Bookmarks
+  - Entertainment:
+      tab: Bookmarks
+  - AI:
+      tab: Bookmarks
+  - Repositories:
+      tab: Bookmarks
+  - Etc:
+      tab: Bookmarks
+      style: row
+  - Services:
+      tab: Raspberry Pi 5
+  - Performance:
+      tab: Raspberry Pi 5
+      style: row
+      columns: 2
+
+quicklaunch:
+  searchDescriptions: true
+  showSearchSuggestions: true
+  provider: duckduckgo
