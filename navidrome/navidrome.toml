@@ -1,0 +1,2 @@
+DataFolder = "/var/lib/navidrome"
+MusicFolder = "/srv/navidrome/music"
