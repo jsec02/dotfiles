@@ -14,10 +14,10 @@ Lua                             58            611            588           3942
 TOML                             7            109            321            333
 JSON                             3              0              0            249
 YAML                             7             17             20            206
-Markdown                         2              9              4            148
+Markdown                         2              9              4            159
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            78            746            933           4900
+SUM:                            78            746            933           4911
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -136,6 +136,7 @@ dotfiles
 ├── sqlite
 ├── ssh
 │   └── config
+├── x11
 ├── yazi
 │   ├── theme.toml
 │   └── yazi.toml
@@ -145,6 +146,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-31 directories, 86 files
+32 directories, 86 files
 ```
 <!-- PROJECT_STRUCTURE_END -->

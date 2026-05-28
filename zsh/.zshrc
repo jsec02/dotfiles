@@ -85,6 +85,10 @@ if command -v dircolors &>/dev/null; then
     alias ls='ls --color=auto'
 fi
 
+# git
+alias gs='git status'
+alias gpom='git pull origin master'
+
 # Auto suggestions
 alias suggestoff='ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=0'
 alias suggeston='unset ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE'
