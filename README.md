@@ -10,14 +10,14 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             58            611            588           3942
-TOML                             7            109            321            333
+Lua                             58            611            588           3943
+TOML                             8            109            321            335
 JSON                             3              0              0            249
 YAML                             7             17             20            206
-Markdown                         2              9              4            159
+Markdown                         2              9              4            160
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            78            746            933           4911
+SUM:                            79            746            933           4915
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -53,6 +53,12 @@ dotfiles
 │   └── widgets.yaml
 ├── kak
 │   └── kakrc
+├── lightdm
+│   └── lightdm.conf
+├── navidrome
+│   └── navidrome.toml
+├── networkmanager
+│   └── NetworkManager.conf
 ├── nvim
 │   ├── after
 │   │   └── ftplugin
@@ -133,10 +139,11 @@ dotfiles
 │       ├── en.utf-8.add
 │       └── en.utf-8.add.spl
 ├── README.md
+├── redshift
+│   └── redshift.conf
 ├── sqlite
 ├── ssh
 │   └── config
-├── x11
 ├── yazi
 │   ├── theme.toml
 │   └── yazi.toml
@@ -146,6 +153,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-32 directories, 86 files
+35 directories, 90 files
 ```
 <!-- PROJECT_STRUCTURE_END -->

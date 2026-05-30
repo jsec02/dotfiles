@@ -40,6 +40,7 @@ return {
                 sql = { "sqruff" },
                 css = { "biome" },
                 json = { "biome" },
+                yaml = { "prettier" },
             },
             -- Custom formatter configurations
             formatters = {
