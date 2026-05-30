@@ -63,7 +63,7 @@
           href: https://reddit.com/
     - Gmail:
         - icon: gmail
-          href: https://mail.reddit.com/
+          href: https://mail.google.com/
     - LinkedIn:
         - icon: linkedin
           href: https://www.linkedin.com/
@@ -114,6 +114,9 @@
           href: https://www.debian.org/distrib/packages#search_packages
 
 - Etc:
+    - Drive:
+        - icon: google-drive
+          href: https://drive.google.com/
     - monkeytype:
         - icon: monkeytype
           href: https://monkeytype.com/
