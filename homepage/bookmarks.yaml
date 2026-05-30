@@ -72,6 +72,9 @@
     - YouTube:
         - icon: youtube
           href: https://youtube.com/
+    - YouTube Music:
+        - icon: youtube-music
+          href: https://music.youtube.com/
     - Twitch:
         - icon: twitch
           href: https://twitch.tv/directory
@@ -123,5 +126,3 @@
     - Credly:
         - abbr: CD
           href: https://www.credly.com/earner/dashboard
-
-          
