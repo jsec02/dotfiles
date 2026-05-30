@@ -114,8 +114,8 @@ alias pentesting='cd $HOME/vault/pentesting'
 if [[ $HOST == "wsl" ]]; then
     backupall() {
         backup \
-        && ssh pi "cd \$HOME/bash/backup && git pull origin master && \$HOME/bash/backup/backup" \
-        && ssh kali "cd \$HOME/bash/backup && git pull origin master && \$HOME/bash/backup/backup"
+        && ssh pi "cd \$HOME/bash/backup && git pull origin master && bash backup" \
+        && ssh kali "cd \$HOME/bash/backup && git pull origin master && bash backup"
     }
 fi
 
