@@ -369,3 +369,5 @@ records = true
 ##
 ## Make directory expand instead of command:
 # columns = ["duration", "time", { type = "directory", expand = true }, { type = "command", expand = false }]
+
+columns = ["exit", "duration", "time", "command"]
