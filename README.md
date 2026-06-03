@@ -144,6 +144,8 @@ dotfiles
 ├── sqlite
 ├── ssh
 │   └── config
+├── test
+│   └── testconfig
 ├── yazi
 │   ├── theme.toml
 │   └── yazi.toml
@@ -153,6 +155,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-35 directories, 90 files
+36 directories, 91 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
