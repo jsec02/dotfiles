@@ -37,7 +37,7 @@ function M.run_in_zellij_floating(interpreter, filename, args)
     local actual_interpreter = get_interpreter_path(interpreter)
     local args_str = args and (" " .. args) or ""
     local zellij_cmd = string.format(
-        'zellij run --floating --width "80%%" --height "80%%" --x "10%%" --y "15%%" -- %s "%s"%s',
+        'zellij run --floating --width "80%%" --height "80%%" --x "10%%" --y "12%%" -- %s "%s"%s',
         actual_interpreter,
         filename,
         args_str
