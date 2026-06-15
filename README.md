@@ -13,11 +13,10 @@ Language                     files          blank        comment           code
 Lua                             58            611            588           3943
 TOML                             7            110            321            334
 JSON                             3              0              0            249
-YAML                             7             15             20            212
-Markdown                         2              9              4            167
+Markdown                         2              9              4            163
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            78            745            933           4927
+SUM:                            71            730            913           4711
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -41,20 +40,8 @@ dotfiles
 │   ├── languages.toml
 │   └── themes
 │       └── astrodark.toml
-├── homepage
-│   ├── bookmarks.yaml
-│   ├── custom.css
-│   ├── custom.js
-│   ├── docker.yaml
-│   ├── kubernetes.yaml
-│   ├── proxmox.yaml
-│   ├── services.yaml
-│   ├── settings.yaml
-│   └── widgets.yaml
 ├── kak
 │   └── kakrc
-├── lightdm
-│   └── lightdm.conf
 ├── nvim
 │   ├── after
 │   │   └── ftplugin
@@ -149,6 +136,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-33 directories, 88 files
+31 directories, 78 files
 ```
 <!-- PROJECT_STRUCTURE_END -->

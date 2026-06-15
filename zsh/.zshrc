@@ -98,6 +98,14 @@ alias lvim='NVIM_APPNAME=nvim.lazy nvim'
 alias avim='NVIM_APPNAME=nvim.astro nvim'
 alias mvim='NVIM_APPNAME=nvim.mini nvim'
 
+# gowitness
+if command -v gowitness &>/dev/null; then
+    alias gw='gowitness scan file --file hosts --write-db \
+        && gowitness report generate \
+        && unzip -o gowitness-report.zip \
+        && rm gowitness-report.zip'
+fi
+
 # VirtualBox
 [[ -e "/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe" ]] \
     && alias vbox='"/mnt/c/Program Files/Oracle/VirtualBox/VBoxManage.exe"'
