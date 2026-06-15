@@ -11,13 +11,13 @@ Personal dotfiles and configuration management for my linux machines
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Lua                             58            611            588           3943
-TOML                             8            110            321            336
+TOML                             7            110            321            334
 JSON                             3              0              0            249
 YAML                             7             15             20            212
 Markdown                         2              9              4            167
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            79            745            933           4929
+SUM:                            78            745            933           4927
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -55,10 +55,6 @@ dotfiles
 │   └── kakrc
 ├── lightdm
 │   └── lightdm.conf
-├── navidrome
-│   └── navidrome.toml
-├── networkmanager
-│   └── NetworkManager.conf
 ├── nvim
 │   ├── after
 │   │   └── ftplugin
@@ -153,6 +149,6 @@ dotfiles
 │       └── astrodark.kdl
 └── zsh
 
-35 directories, 90 files
+33 directories, 88 files
 ```
 <!-- PROJECT_STRUCTURE_END -->
