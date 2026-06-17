@@ -23,6 +23,4 @@ export PATH="$HOME/bash/backup:$PATH"
 export PATH="$PATH:/mnt/c/Windows/System32"
 
 # Python
-if command -v ipdb &>/dev/null; then
-    export PYTHONBREAKPOINT=ipdb.set_trace
-fi
+export PYTHONBREAKPOINT=ipdb.set_trace
