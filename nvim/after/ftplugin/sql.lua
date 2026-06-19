@@ -31,8 +31,18 @@ end
 
 local function build_sql_command(config, filename)
     local commands = {
-        mariadb = { "mariadb", "-u", config.user, "-t", "-e", string.format('"source %s"', filename) },
-        mysql = { "mysql", "-u", config.user, "-t", "-e", string.format('"source %s"', filename) },
+        mariadb = {
+            "mariadb",
+            "--user=" .. config.user,
+            "--table",
+            "--execute=" .. string.format('"source %s"', filename),
+        },
+        mysql = {
+            "mysql",
+            "--user=" .. config.user,
+            "--table",
+            "--execute=" .. string.format('"source %s"', filename),
+        },
     }
     return commands[config.dbms]
 end
