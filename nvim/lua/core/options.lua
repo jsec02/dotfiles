@@ -104,6 +104,8 @@ g.loaded_rrhelper = 1
 g.netrw_silent = 1
 g.loaded_matchit = 1
 g.loaded_matchparen = 1
+g.loaded_sql_completion = 1
+g.omni_sql_no_default_maps = 1
 
 -- =================================== SECURITY ===================================
 
