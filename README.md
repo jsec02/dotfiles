@@ -10,13 +10,13 @@ Personal dotfiles and configuration management for my linux machines
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
-Lua                             58            611            588           3943
+Lua                             58            626            589           4015
 TOML                             7            110            321            334
 JSON                             3              0              0            249
 Markdown                         2              9              4            150
 Bourne Shell                     1              0              0             22
 -------------------------------------------------------------------------------
-SUM:                            71            730            913           4698
+SUM:                            71            745            914           4770
 -------------------------------------------------------------------------------
 ```
 <!-- CODE_STATISTICS_END -->
@@ -75,11 +75,11 @@ dotfiles
 │   │   │   │   ├── heirline_path.lua
 │   │   │   │   └── highlights.lua
 │   │   │   └── modules
-│   │   │       ├── code_debugger.lua
-│   │   │       ├── code_runner.lua
+│   │   │       ├── debugger.lua
 │   │   │       ├── divider_generator.lua
 │   │   │       ├── eof_padding.lua
 │   │   │       ├── init.lua
+│   │   │       ├── runner.lua
 │   │   │       ├── status_column.lua
 │   │   │       ├── winbar_breadcrumbs.lua
 │   │   │       └── window_swapper.lua
