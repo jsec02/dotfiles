@@ -1,5 +1,5 @@
 -- ================================================================================
--- =                                CODE DEBUGGER                                 =
+-- =                                   DEBUGGER                                   =
 -- ================================================================================
 
 local M = {}
@@ -12,7 +12,7 @@ local function get_debugger_path(debugger_cmd)
     return debugger_cmd
 end
 
-function M.debug_in_zellij(debugger_cmd, filename, args)
+function M.run_debugger_in_zellij(debugger_cmd, filename, args)
     if os.getenv("ZELLIJ") == nil then
         vim.notify("Not in a Zellij session", vim.log.levels.WARN)
         return
@@ -26,7 +26,7 @@ function M.debug_in_zellij(debugger_cmd, filename, args)
     vim.fn.system(zellij_cmd)
 end
 
-function M.debug_in_zellij_floating(debugger_cmd, filename, args)
+function M.run_debugger_in_zellij_floating(debugger_cmd, filename, args)
     if os.getenv("ZELLIJ") == nil then
         vim.notify("Not in a Zellij session", vim.log.levels.WARN)
         return

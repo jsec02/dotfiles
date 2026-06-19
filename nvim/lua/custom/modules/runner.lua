@@ -1,8 +1,31 @@
 -- ================================================================================
--- =                                 CODE RUNNER                                  =
+-- =                                    RUNNER                                    =
 -- ================================================================================
 
 local M = {}
+
+function M.run_shell_in_zellij(cmd)
+    if os.getenv("ZELLIJ") == nil then
+        vim.notify("Not in a Zellij session", vim.log.levels.WARN)
+        return
+    end
+    vim.cmd("update")
+    vim.notify("Running command in Zellij")
+    local zellij_cmd = string.format("zellij run -- %s", cmd)
+    vim.fn.system(zellij_cmd)
+end
+
+function M.run_shell_in_zellij_floating(cmd)
+    if os.getenv("ZELLIJ") == nil then
+        vim.notify("Not in a Zellij session", vim.log.levels.WARN)
+        return
+    end
+    vim.cmd("update")
+    vim.notify("Running command in Zellij")
+    local zellij_cmd =
+        string.format('zellij run --floating --width "80%%" --height "80%%" --x "10%%" --y "12%%" -- %s', cmd)
+    vim.fn.system(zellij_cmd)
+end
 
 local function get_interpreter_path(interpreter)
     local venv = os.getenv("VIRTUAL_ENV")
@@ -12,7 +35,7 @@ local function get_interpreter_path(interpreter)
     return interpreter
 end
 
-function M.run_in_zellij(interpreter, filename, args)
+function M.run_interpreter_in_zellij(interpreter, filename, args)
     if os.getenv("ZELLIJ") == nil then
         vim.notify("Not in a Zellij session", vim.log.levels.WARN)
         return
@@ -26,7 +49,7 @@ function M.run_in_zellij(interpreter, filename, args)
     vim.fn.system(zellij_cmd)
 end
 
-function M.run_in_zellij_floating(interpreter, filename, args)
+function M.run_interpreter_in_zellij_floating(interpreter, filename, args)
     if os.getenv("ZELLIJ") == nil then
         vim.notify("Not in a Zellij session", vim.log.levels.WARN)
         return
@@ -45,7 +68,7 @@ function M.run_in_zellij_floating(interpreter, filename, args)
     vim.fn.system(zellij_cmd)
 end
 
-function M.run_detached(interpreter, filename, args)
+function M.run_interpreter_detached(interpreter, filename, args)
     vim.cmd("update")
     local display_name = vim.fn.fnamemodify(filename, ":t")
     vim.notify("Running " .. display_name .. " detached")
